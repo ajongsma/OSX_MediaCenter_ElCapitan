@@ -9,7 +9,7 @@ OS X Media Center - El Capitan edition
 - http://pooky.local:32400/status/sessions
 
 #####OS X Server
-- /Library/Server/Web/Config/apache2/sites
+- /Library/Server/Web/Config/apache2/sites/
 - /Library/Server/Web/Config/Apache2/httpd_server_app.conf
 - /Library/Server/web/config/apache2/httpd_server_app.conf.default
 
