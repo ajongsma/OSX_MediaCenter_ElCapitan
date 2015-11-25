@@ -90,7 +90,9 @@ fi
 #------------------------------------------------------------------------------
 # Show the ~/Library folder
 #------------------------------------------------------------------------------
-chflags nohidden ~/Library
+if [[ $ENABLE_LIBRARY_VIEW == "true" ]]; then
+    source "$DIR/scripts/osx_libraryview_enable.sh"
+fi
 
 #------------------------------------------------------------------------------
 # Enable Tap to Click for this user and for the login screen
