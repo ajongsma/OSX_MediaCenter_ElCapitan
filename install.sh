@@ -47,8 +47,8 @@ COLOR_RESET=$'\x1b[0m'
 BLUE=$'\x1b[0;34m'
 
 # Setting some escaped characters
-CHAR_CHECKMARK="\xE2\x9C\x93"
-CHAR_XMARK="\xE2\x9C\x97"
+CHAR_CHECKMARK=$'\xE2\x9C\x93'
+CHAR_XMARK=$'\xE2\x9C\x97'
 
 # Host used to test Internet connection
 PING_HOST="www.google.com"
