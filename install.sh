@@ -148,10 +148,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #------------------------------------------------------------------------------
 ## Run software update and reboot
 if [[ $INST_OSX_UPDATES == "true" ]]; then
+    echo "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} System is not up-to-date, updating ..."
     sudo softwareupdate --list
     sudo softwareupdate --install --all
 else
-  echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} You are a up-to-date."
+  echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} System is up-to-date."
 fi
 
 #------------------------------------------------------------------------------
