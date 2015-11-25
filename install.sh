@@ -41,9 +41,10 @@ PRINTF_MASK="%-50s %s %10s %s\n"
 TIMESTAMP=`date +%Y%m%d%H%M%S`
 
 # Setting some color constants
-COLOR_GREEN="\x1b[0;32m"
-COLOR_RED="\x1b[0;31m"
-COLOR_RESET="\x1b[0m"
+COLOR_GREEN=$'\x1b[0;32m'
+COLOR_RED=$'\x1b[0;31m'
+COLOR_RESET=$'\x1b[0m'
+BLUE=$'\x1b[0;34m'
 
 # Setting some escaped characters
 CHAR_CHECKMARK="\xE2\x9C\x93"
