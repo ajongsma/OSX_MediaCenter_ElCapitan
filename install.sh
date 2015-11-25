@@ -152,15 +152,11 @@ if [[ $INST_OSX_UPDATES == "true" ]]; then
 fi
 
 #------------------------------------------------------------------------------
-# Show the ~/Library folder
+# Changing default system behaviour
 #------------------------------------------------------------------------------
 if [[ $ENABLE_LIBRARY_VIEW == "true" ]]; then
     source "$DIR/scripts/osx_libraryview_enable.sh"
 fi
-
-#------------------------------------------------------------------------------
-# Enable Tap to Click for this user and for the login screen
-#------------------------------------------------------------------------------
 if [[ $ENABLE_MOUSE_TAPTOCLICK == "true" ]]; then
     source "$DIR/scripts/osx_mouse_taptoclick_enable.sh"
 fi
