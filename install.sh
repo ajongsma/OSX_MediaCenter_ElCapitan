@@ -61,10 +61,6 @@ function check_system() {
 ## Main
 check_system
 
-osvers=$(sw_vers -productVersion | awk -F. '{print $2}')
-sw_vers=$(sw_vers -productVersion)
-sw_build=$(sw_vers -buildVersion)
-
 #------------------------------------------------------------------------------
 # Keep-alive: update existing sudo time stamp until finished
 #------------------------------------------------------------------------------
