@@ -12,5 +12,6 @@ INST_OSX_UPDATES="false"
 
 #-----------------------------------------------------------
 ## OSX Settings
+ENABLE_LIBRARY_VIEW="true"
 ENABLE_MOUSE_TAPTOCLICK="true"
 
