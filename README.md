@@ -22,3 +22,9 @@ OS X Media Center - El Capitan edition
 - http://jason.pureconcepts.net/2014/11/configure-apache-virtualhost-mac-os-x/
 - https://clickontyler.com/support/a/41/osx-server-app-virtualhostx/
 - http://matt.coneybeare.me/how-to-map-plex-media-server-to-your-home-domain/
+
+#####Dot files
+- https://github.com/paulirish/dotfiles
+- https://github.com/mathiasbynens/dotfiles
+- https://github.com/cowboy/dotfiles
+- http://dotfiles.github.io
