@@ -28,3 +28,4 @@ OS X Media Center - El Capitan edition
 - https://github.com/mathiasbynens/dotfiles
 - https://github.com/cowboy/dotfiles
 - http://dotfiles.github.io
+- https://github.com/natelandau/awesome-osx
