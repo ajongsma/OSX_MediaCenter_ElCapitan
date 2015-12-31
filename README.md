@@ -29,3 +29,9 @@ OS X Media Center - El Capitan edition
 - https://github.com/cowboy/dotfiles
 - http://dotfiles.github.io
 - https://github.com/natelandau/awesome-osx
+
+#####lsd error
+1 sudo mkdir /private/var/db/lsd
+2 sudo touch /private/var/db/lsd/com.apple.lsdschemes.plist
+3 sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
+4 https://support.apple.com/en-us/HT203129
