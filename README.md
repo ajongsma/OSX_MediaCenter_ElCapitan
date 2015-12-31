@@ -32,6 +32,9 @@ OS X Media Center - El Capitan edition
 
 #####lsd error
 - sudo mkdir /private/var/db/lsd
+- xattr -wr com.apple.finder.copy.source.checksum#N 4 /private/var/db/lsd
+- xattr -wr com.apple.metadata:_kTimeMachineNewestSnapshot 50 /private/var/db/lsd
+- xattr -wr com.apple.metadata:_kTimeMachineOldestSnapshot 50 /private/var/db/lsd
 - sudo touch /private/var/db/lsd/com.apple.lsdschemes.plist
 - sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
 - https://support.apple.com/en-us/HT203129
