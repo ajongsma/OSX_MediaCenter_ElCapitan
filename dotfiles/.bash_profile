@@ -319,7 +319,7 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 #   ii:  display useful host related informaton
 #   -------------------------------------------------------------------
 ii() {
-	echo -e "$(tput setaf 5)You are logged on:$(tput sgr0) " ; echo $(hostname | sed -e 's/\..*//')
+    echo -e "$(tput setaf 5)You are logged on:$(tput sgr0) " ; echo $(hostname | sed -e 's/\..*//')
     echo -e "$(tput setaf 5)Additionnal information:$(tput sgr0) " ; uname -a
     echo -e "$(tput setaf 5)Users logged on:$(tput sgr0) " ; w -h
     echo -e "$(tput setaf 5)Current date :$(tput sgr0) " ; date
