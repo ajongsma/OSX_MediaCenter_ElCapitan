@@ -24,11 +24,16 @@ OS X Media Center - El Capitan edition
 - http://matt.coneybeare.me/how-to-map-plex-media-server-to-your-home-domain/
 
 #####Dot files
+- https://github.com/nicolashery/mac-dev-setup
+- https://github.com/donnemartin/dev-setup
 - https://github.com/paulirish/dotfiles
 - https://github.com/mathiasbynens/dotfiles
 - https://github.com/cowboy/dotfiles
 - http://dotfiles.github.io
 - https://github.com/natelandau/awesome-osx
+
+#####Usefull
+- sphp https://github.com/conradkleinespel/sphp-osx
 
 #####lsd error
 - sudo mkdir /private/var/db/lsd
