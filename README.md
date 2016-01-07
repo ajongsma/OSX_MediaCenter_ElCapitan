@@ -15,7 +15,7 @@ OS X Media Center - El Capitan edition
 
 Note:
 =====
-A clean install will erase all of the contents on your disk drive. Make sure to back up your important files, settings and apps before proceeding. If needed, upgrade the system to Mavericks (https://itunes.apple.com/us/app/os-x-mavericks/id675248567?mt=12)
+A clean install will erase all of the contents on your disk drive. Make sure to back up your important files, settings and apps before proceeding. If needed, upgrade the system to El Capitan (https://itunes.apple.com/nl/app/os-x-el-capitan/id1018109117) ![El Capitan](https://itunes.apple.com/nl/app/os-x-el-capitan/id1018109117)
 
 Performing a clean install:
 
