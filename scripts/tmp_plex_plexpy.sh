@@ -53,5 +53,8 @@ else
   echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} Library folder LaunchAgents exists."
 fi
 
+# /Library/LaunchDaemons
+
+#[ -a .pow ] || ln -s "$POW_ROOT/Hosts" .pow
 
 #cd $DIR
