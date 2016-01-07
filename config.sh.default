@@ -11,7 +11,13 @@
 INST_OSX_UPDATES="false"
 
 #-----------------------------------------------------------
+DOWNLOAD_DIR=""
+
 ## OSX Settings
 ENABLE_LIBRARY_VIEW="true"
 ENABLE_MOUSE_TAPTOCLICK="true"
+
+## Plex
+PLEX_UID=""
+PLEX_PW=""
 
