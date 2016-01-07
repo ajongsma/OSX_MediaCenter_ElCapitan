@@ -3,7 +3,7 @@ OS X Media Center - El Capitan edition
 
 ![minions](http://www.donankleer.com/wp-content/uploads/2013/05/minions_cheering.gif)
 
-![OSX_Mavericks](img/osx_mavericks_64x64.jpg)
+![El_Capitan](https://1anh.com/64/64/EZYwYm5NdZIwlXo48tMBufykgNFiWK-L-tezFAefrD8af4QjQhp2NOdupE5HJcKE_fG_ExPYuHr3QwbJK0ftGd6zyy_KbmYfvWDu04HcDEF47D9BgtSLdC-ABHvhBr-1)
 ![OSX_Server](img/osx_server_64x64.jpeg)
 ![Plex_Client](img/plex_client_64x64.jpeg)
 ![Plex_Server](img/plex_server_64x64.png)
