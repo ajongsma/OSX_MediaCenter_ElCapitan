@@ -1,5 +1,5 @@
 # OSX_MediaCenter
-OS X Media Center - El Capitan edition
+######El Capitan edition
 
 ![minions](http://www.donankleer.com/wp-content/uploads/2013/05/minions_cheering.gif)
 
