@@ -1,6 +1,32 @@
 # OSX_MediaCenter
 OS X Media Center - El Capitan edition
 
+![minions](http://www.donankleer.com/wp-content/uploads/2013/05/minions_cheering.gif)
+
+![OSX_Mavericks](img/osx_mavericks_64x64.jpg)
+![OSX_Server](img/osx_server_64x64.jpeg)
+![Plex_Client](img/plex_client_64x64.jpeg)
+![Plex_Server](img/plex_server_64x64.png)
+![SABnzbd](img/sabnzbd_64x64.png)
+![SickBeard](img/sickBeard_64x64.png)
+![CouchPotato](img/couchpotato_64x64.png)
+![Trakt](img/trakt_64x64.png)
+
+
+Note:
+=====
+A clean install will erase all of the contents on your disk drive. Make sure to back up your important files, settings and apps before proceeding. If needed, upgrade the system to Mavericks (https://itunes.apple.com/us/app/os-x-mavericks/id675248567?mt=12)
+
+Performing a clean install:
+
+1. Restart your Mac and hold down the Command key and the R key (cmd⌘+R). Press and hold these keys until the Apple logo appears.
+
+2. For a clean install, open up Disk Utility and erase your main hard drive. Once you've done so, you can go back to the Install OS X Mavericks disk and choose "Install a new copy of OS X."
+
+
+Install 
+=====
+In Progress
 
 
 #####Plex Information pages
