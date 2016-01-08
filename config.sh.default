@@ -41,17 +41,3 @@ BLUE=$'\x1b[0;34m'
 # Setting some escaped characters
 CHAR_CHECKMARK=$'\xE2\x9C\x93'
 CHAR_XMARK=$'\xE2\x9C\x97'
-
-if [ ! -f config.sh ]; then
-  clear
-  echo "No config.sh found. Creating file, and please edit the required values"
-  cp config.sh.default config.sh
-  vi config.sh
-fi
-
-source config.sh
-
-if [[ $AGREED == "no" ]]; then
-  echo "Please edit the config.sh file"
-  exit
-fi
