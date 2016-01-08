@@ -28,43 +28,41 @@ BLUE=$'\x1b[0;34m'
 CHAR_CHECKMARK=$'\xE2\x9C\x93'
 CHAR_XMARK=$'\xE2\x9C\x97'
 
-# Host used to test Internet connection
-PING_HOST="www.google.com"
 
 
-
-
-## ----------------------------------------------------------------------------
-## Functions
-abort() {
-  echo "$1"
-  exit 1
-}
-
-function to_lower()
-{
-    echo $1 | tr '[A-Z]' '[a-z]'
-}
-
-function check_system() {
-    # Check for supported system
-    kernel=`uname -s`
-    case $kernel in
-        Darwin) ;;
-        *) fail "Sorry, $kernel is not supported." ;;
-    esac
-}
 
 ## ----------------------------------------------------------------------------
 ## Main
-check_system
-osvers=$(sw_vers -productVersion | awk -F. '{print $2}')
-sw_vers=$(sw_vers -productVersion)
-sw_build=$(sw_vers -buildVersion)
+
+if [ -f _functions.sh ]; then
+  source _functions.sh
+elif [ -f ../_functions.sh ]; then
+  source ../_functions.sh
+else
+   echo "Config file functions.sh does not exist"
+   exit 1
+fi
 
 echo
 echo "Checking a few things to make sure we are good to go..."
 echo
+
+verify_os
+
+if [ ! -f config.sh ]; then
+  clear
+  echo "No config.sh found. Creating file, please edit the required values"
+  cp config.sh.default config.sh
+  pico config.sh
+fi
+
+source config.sh
+
+if [[ $AGREED == "no" ]]; then
+  echo "Please edit the config.sh file"
+  exit
+fi
+
 
 # Checking for an Internet connection
 if /sbin/ping -s1 -t4 -o ${PING_HOST} >/dev/null 2>&1
@@ -82,30 +80,6 @@ if groups | grep -w -q admin 2>&1
     abort "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} You are not an admin."
 fi
 
-#  # Determine if the Xcode command line tools installed.
-#
-#  # Checking to make sure xcode-command line tools are installed.
-#  XCODE_SELECT=$(xcode-select -p 2>&1);
-#  #if [[ $XCODE_SELECT == "/Library/Developer/CommandLineTools" || \
-#  #  $XCODE_SELECT == "/Applications/Xcode.app/Contents/Developer" ]]
-#  if [ "$XCODE_SELECT" = '/Library/Developer/CommandLineTools' ] || [ "$XCODE_SELECT" = '/Applications/Xcode.app/Contents/Developer' ]
-#  then
-#    echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} Xcode command line tools installed."
-#  else
-#    echo "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} Xcode command line tools not installed."
-#    abort "Please run '$ xcode-select --install'"
-#  fi
-
-#  # Checking for git
-#  if command -v git >/dev/null 2>&1
-#  then
-#    echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} git appears to be available."
-#  else
-#    abort "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} Xcode command line tools git not found!"
-#  fi
-#  echo
-#  echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} All good to go..."
-#  echo
 
 #------------------------------------------------------------------------------
 # Keep-alive: update existing sudo time stamp until finished
@@ -124,21 +98,21 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Checking if system is up-to-date
 #------------------------------------------------------------------------------
 ## Run software update and reboot
-if [[ $INST_OSX_UPDATES == "true" ]]; then
-    echo "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} System is not up-to-date, updating ..."
-    sudo softwareupdate --list
-    sudo softwareupdate --install --all
-else
-  echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} System is up-to-date."
-fi
+#  if [[ $INST_OSX_UPDATES == "true" ]]; then
+#      echo "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} System is not up-to-date, updating ..."
+#      sudo softwareupdate --list
+#      sudo softwareupdate --install --all
+#  else
+#    echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} System is up-to-date."
+#  fi
 
 #------------------------------------------------------------------------------
 # Changing default system behaviour
 #------------------------------------------------------------------------------
-if [[ $ENABLE_LIBRARY_VIEW == "true" ]]; then
-    source "$DIR/scripts/osx_libraryview_enable.sh"
-fi
-if [[ $ENABLE_MOUSE_TAPTOCLICK == "true" ]]; then
-    source "$DIR/scripts/osx_mouse_taptoclick_enable.sh"
-fi
+#  if [[ $ENABLE_LIBRARY_VIEW == "true" ]]; then
+#      source "$DIR/scripts/osx_libraryview_enable.sh"
+#  fi
+#  if [[ $ENABLE_MOUSE_TAPTOCLICK == "true" ]]; then
+#      source "$DIR/scripts/osx_mouse_taptoclick_enable.sh"
+#  fi
 

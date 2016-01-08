@@ -1,5 +1,10 @@
 #!/bin/bash
 
+abort() {
+  echo "$1"
+  exit 1
+}
+
 answer_is_yes() {
     [[ "$REPLY" =~ ^[Yy]$ ]] \
         && return 0 \

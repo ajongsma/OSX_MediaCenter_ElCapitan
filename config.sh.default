@@ -11,7 +11,7 @@
 INST_OSX_UPDATES="false"
 
 #-----------------------------------------------------------
-FOLDER_DOWNLOAD="/tmp"
+FOLDER_DOWNLOAD="$HOME/Downloads"
 
 ## OSX Settings
 ENABLE_LIBRARY_VIEW="false"
@@ -26,7 +26,8 @@ PLEX_RELEASE="64-bit"
 ## PlexPy
 PLEXPY_FOLDER="/Users/Plex/PlexPy"
 
-
+# Host used to test Internet connection
+PING_HOST="www.google.com"
 
 
 
