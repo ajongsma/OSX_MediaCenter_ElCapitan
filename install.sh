@@ -36,8 +36,8 @@ CHAR_XMARK=$'\xE2\x9C\x97'
 
 if [ -f _functions.sh ]; then
   source _functions.sh
-elif [ -f ../_functions.sh ]; then
-  source ../_functions.sh
+elif [ -f scripts/_functions.sh ]; then
+  source scripts/_functions.sh
 else
    echo "Config file functions.sh does not exist"
    exit 1
