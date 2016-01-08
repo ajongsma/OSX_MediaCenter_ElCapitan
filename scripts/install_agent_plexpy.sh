@@ -21,7 +21,7 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
-	if ! file_exist '/Library/LaunchDaemons/local.plex.plexpy.plist'; then
+	if ! file_exist '/Library/LaunchAgents/local.plex.plexpy.plist'; then
     ask_for_sudo
     sudo cp ../config/launchctl/local.plex.plexpy.plist /Library/LaunchAgents/local.plex.plexpy.plist
     print_result $? 'Copy PlexPy launch agent'
