@@ -24,18 +24,14 @@ fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
 	if ! file_exist '/Library/LaunchDaemons/local.plex.plexpy.plist'; then
-    SABNZBD_VERSION=`curl -s http://sabnzbdplus.sourceforge.net/version/latest | head -n1`
-    SABNZBD_DIR="SABnzbd-${SABNZBD_VERSION}"
-    SABNZBD_GZ="${SABNZBD_DIR}-osx.dmg"
+    cp ../config/launchctl/local.plex.plexpy.plist /Library/LaunchDaemons/
+    print_result $? 'Copy PlexPy launch agent'
 
-    download "http://freefr.dl.sourceforge.net/project/sabnzbdplus/sabnzbdplus/${SABNZBD_VERSION}/${SABNZBD_GZ}" "$HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
-    print_result $? 'Download SabNZBD'
-
-    ask_for_sudo
-    install_dmg "HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
+    #ask_for_sudo
+    #install_dmg "HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
   fi
 
-	print_result $? 'Homebrew'
+	print_result $? 'LaunchAgent PlexPy'
 }
 
 main
