@@ -42,17 +42,6 @@ BLUE=$'\x1b[0;34m'
 CHAR_CHECKMARK=$'\xE2\x9C\x93'
 CHAR_XMARK=$'\xE2\x9C\x97'
 
-# Current folder
-SOURCE="${BASH_SOURCE[0]}"
-DIR="$( dirname "$SOURCE" )"
-while [ -h "$SOURCE" ]
-do
-  SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-  DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd )"
-done
-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-
 if [ ! -f config.sh ]; then
   clear
   echo "No config.sh found. Creating file, and please edit the required values"
