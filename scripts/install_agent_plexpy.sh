@@ -23,7 +23,7 @@ fi
 main() {
 	if ! file_exist '/Library/LaunchDaemons/local.plex.plexpy.plist'; then
     ask_for_sudo
-    cp ../config/launchctl/local.plex.plexpy.plist /Library/LaunchDaemons/
+    cp ../config/launchctl/local.plex.plexpy.plist /Library/LaunchAgents/local.plex.plexpy.plist
     print_result $? 'Copy PlexPy launch agent'
 
     #ask_for_sudo
