@@ -1,7 +1,7 @@
 # OSX_MediaCenter
 ######El Capitan edition
 
-![minions](img/minions_cheering.gif)
+![minions](img/cheering_minions.gif)
 
 ![El_Capitan](img/elcapitan_64x64.jpg)
 ![OSX_Server](img/osx_server_64x64.jpg)
