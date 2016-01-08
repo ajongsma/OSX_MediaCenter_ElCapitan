@@ -1,11 +1,11 @@
 # OSX_MediaCenter
 ######El Capitan edition
 
-![minions](http://www.donankleer.com/wp-content/uploads/2013/05/minions_cheering.gif)
+![minions](img/minions_cheering.gif)
 
-![El_Capitan](https://1anh.com/64/64/EZYwYm5NdZIwlXo48tMBufykgNFiWK-L-tezFAefrD8af4QjQhp2NOdupE5HJcKE_fG_ExPYuHr3QwbJK0ftGd6zyy_KbmYfvWDu04HcDEF47D9BgtSLdC-ABHvhBr-1)
-![OSX_Server](img/osx_server_64x64.jpeg)
-![Plex_Client](img/plex_client_64x64.jpeg)
+![El_Capitan](img/elcapitan_64x64.jpg)
+![OSX_Server](img/osx_server_64x64.jpg)
+![Plex_Client](img/plex_client_64x64.jpg)
 ![Plex_Server](img/plex_server_64x64.png)
 ![SABnzbd](img/sabnzbd_64x64.png)
 ![SickBeard](img/sickBeard_64x64.png)
