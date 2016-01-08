@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.plex.plexpy</string>
+	<string>local.plex.plexpy</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/python</string>
