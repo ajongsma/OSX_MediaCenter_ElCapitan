@@ -21,13 +21,53 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
+  # Sanity check
+  if [ "${SPOTWEB_FOLDER}" == "" ]; then
+    echo "Error: Need username & password to download PlexPass version. Otherwise run with -p to download public version."
+    exit 1
+  fi
+
+  # Let's do it
   if ! folder_exists $SPOTWEB_FOLDER; then
     sudo mkdir -p $SPOTWEB_FOLDER
     sudo chown `whoami`:staff $SPOTWEB_FOLDER
 
-    git clone https://github.com/spotweb/spotweb.git Spotweb
+    git clone https://github.com/spotweb/spotweb.git $SPOTWEB_FOLDER
     print_result $? 'Download Spotweb'
 
+    sudo ln -s $SPOTWEB_FOLDER /Library/Server/Web/Data/Sites/Default/spotweb
+
+
+
+    open http://localhost/spotweb/install.php
+    echo " --- press any key to continue ---"
+    read -n 1 -s
+
+    ## PHP extension: gettext           - Not OK
+    ## GD           : FreeType Support  - Not OK
+    ## Cache directory is writable?     - Not OK
+    ## Own settings file                - NOT OK (optional)
+
+
+
+
+
+
+
+# /Library/Server/Web/Config/apache2/webapps/
+
+
+# ps aux | grep httpd
+
+# cat /Library/Server/Web/Config/apache2/httpd_server_app.conf
+#  Include /Library/Server/Web/Config/apache2/sites/*.conf
+
+
+
+# http://pablin.org/2015/04/30/configuring-jenkins-on-os-x-server/
+
+# http://mar2zz.tweakblogs.net/blog/6724/spotweb-als-provider.html
+# http://www.happylark.nl/spotweb-instellen/
 
   fi
 
