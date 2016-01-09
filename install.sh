@@ -64,21 +64,21 @@ if [[ $AGREED == "no" ]]; then
 fi
 
 
-# Checking for an Internet connection
-if /sbin/ping -s1 -t4 -o ${PING_HOST} >/dev/null 2>&1
-  then
-    echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} We have an Internet connection."
-  else
-    abort "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} We do not have an Internet connection."
-fi
+#  # Checking for an Internet connection
+#  if /sbin/ping -s1 -t4 -o ${PING_HOST} >/dev/null 2>&1
+#    then
+#      echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} We have an Internet connection."
+#    else
+#      abort "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} We do not have an Internet connection."
+#  fi
 
-# Check if the current account is in the admin group
-if groups | grep -w -q admin 2>&1
-  then
-    echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} You are an admin."
-  else
-    abort "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} You are not an admin."
-fi
+  # Check if the current account is in the admin group
+  if groups | grep -w -q admin 2>&1
+    then
+      echo "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} You are an admin."
+    else
+      abort "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} You are not an admin."
+  fi
 
 
 #------------------------------------------------------------------------------
