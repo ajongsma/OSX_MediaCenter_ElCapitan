@@ -21,7 +21,7 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
-	if ! cmd_exists 'serverinfo'; then
+	if ! folder_exists "$FOLDER_INSTALL/Server.app"; then
 		echo "OS X Server doesn't exists"
 
     if file_exists "$FOLDER_INSTALL/OS X Server 5.0.15.dmg"; then
