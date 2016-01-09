@@ -357,8 +357,8 @@ install_dmg () {
     app=`find $volume/. -name *.app -maxdepth 1 -type d -print0`
 
     #echo "Copying `echo $app | awk -F/ '{print $NF}'` into Application folder ..."
-    echo "cp -R $app $APPLICATION_FOLDER/$app"
-    sleep 5
+    echo "sudo cp -R $app $APPLICATION_FOLDER/$app"
+    read -p "Press any key..."
     sudo cp -R $app $APPLICATION_FOLDER/$app
 
     return $?
