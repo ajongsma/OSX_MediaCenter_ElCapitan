@@ -22,8 +22,6 @@ fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
 	if ! folder_exists "$FOLDER_INSTALL/Server.app"; then
-		echo "OS X Server doesn't exists"
-
     if file_exists "$FOLDER_INSTALL/OS X Server 5.0.15.dmg"; then
       ask_for_sudo
       install_dmg "HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
@@ -32,7 +30,7 @@ main() {
         ask_for_sudo
         cp -R "$FOLDER_INSTALL/Server.app" "/Applications/Server.app" 
       else
-        echo "OS X Server App file NOT found in $FOLDER_INSTALL"
+        print_error 'OS X Server App file NOT found in $FOLDER_INSTALL!\n'
         exit 1
       fi
     fi    
