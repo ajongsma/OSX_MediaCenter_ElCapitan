@@ -23,7 +23,7 @@ fi
 main() {
 	if ! folder_exists "$FOLDER_INSTALL/Server.app"; then
 
-    DMG_FILE="$FOLDER_INSTALL/OS X Server 5.0.15.dmg"
+    DMG_FILE="$FOLDER_INSTALL/OS_X_Server_5.0.15.dmg"
     if file_exists "$DMG_FILE"; then
       ask_for_sudo
       install_dmg "$DMG_FILE"
