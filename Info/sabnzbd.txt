@@ -1,38 +1,37 @@
 SABnzbd Quick-Start Wizard
 
 -= Language =-
-Select				: Language -> English
+Select										: Language -> English
 
-Click				: Start Wizard
+Click										: Start Wizard
 
 
 -= Server Details - Primary usenet provider =-
-Host				: news.eu.supernews.com
-Port				: 119
-Username			: ********
-Password			: ********
-Connections			: 8
-SSL					: * Enable if needed
--------------------   --------
-Click				: Next
+Host										: news.eu.supernews.com
+Port										: 119
+Username									: ********
+Password									: ********
+Connections									: 8
+SSL											: * Enable if needed
+-------------------------------------------   --------
+Click										: Next
 
 
 -= Access =-
-SABnzbd viewable 	: Any pc on my network.
-Password protect 	: Enable
-Username			: ********
-Password			: ********
-Launch on start 	: Disable
--------------------   --------
-Click				: Next
+SABnzbd viewable 							: Any pc on my network.
+Password protect 							: Enable
+Username									: ********
+Password									: ********
+Launch on start 							: Disable
+-------------------------------------------   --------
+Click										: Next
 
 
 -= Indexer =-
-
-OZnzb Integration	: * Enable if available
-Site API Key		: * Check <https://www.oznzb.com/profile>
--------------------   --------
-Click				: Next
+OZnzb Integration							: * Enable if available
+Site API Key								: * Check <https://www.oznzb.com/profile>
+-------------------------------------------   --------
+Click										: Next
 
 
 -= ******** ******** ******** =-
@@ -40,6 +39,55 @@ Config file will be written to: $HOME/Library/Application Support/SABnzbd
 SABnzbd will restart and become available at: http://localhost:8080/sabnzbd/
 -= ******** ******** ******** =-
 
--= Folders (http://localhost:8080/config/folders/) =-
-Temporary Download Folder :	$HOME/Downloads/Usenet/Incomplete
-Completed Download Folder :	$HOME/Downloads/Usenet/Completed
+-= Folders - (http://localhost:8080/config/folders/) =-
+Temporary Download 							: ~/Downloads/Usenet/Incomplete
+Minimum Free Space							: 30G
+Completed Downloads							: ~/Downloads/Usenet/Completed
+Post-Processing 							: ~/Library/Application Support/SABnzbd/scripts
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+-= Switches - (http://localhost:8080/config/switches/) =-
+Que
+Abort jobs 									: Enable
+Check before download 						: Enable
+Pause Downloading durig post-processing 	: Enable
+
+Post Processing
+Ignore Samples								: Do not download
+
+* Optional - Post Processing
+Extra Par2									: -t0
+Nice Parameters								: -n10
+
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+-= Categories - http://localhost:8080/config/categories/) =-
+anime, Default, Default, Default
+apps, Default, Default, Default
+books, Default, Default, Default
+consoles, Default, Default, Default
+games, Default, Default, Default
+movies, Default, Default, Default
+music, Default, Default, Default
+pda, Default, Default, Default
+tv, Default, Default, Default
+
+
+-= General - (http://localhost:8080/config/general/) =-
+Tuning
+Article Cache Limit							: -1
+Cleanup List								: nfo, .sfv, .txt, .jpg
+
+
+Abort jobs 									: Enable
+Check before download 						: Enable
+Pause Downloading durig post-processing 	: Enable
+
+Post Processing
+Ignore Samples								: Do not download
+-------------------------------------------   --------
+Click										: Save Changes
