@@ -23,7 +23,7 @@ fi
 main() {
   INSTALL_AGENT="local.sabnzbd.sabnzbd.plist"
 
-	if ! file_exist '/Library/LaunchAgents/$INSTALL_AGENT'; then
+	if ! file_exists '/Library/LaunchAgents/$INSTALL_AGENT'; then
     ask_for_sudo
     sudo cp ../config/launchctl/$INSTALL_AGENT /Library/LaunchAgents/
     #print_result $? 'Copy PlexPy launch agent'
