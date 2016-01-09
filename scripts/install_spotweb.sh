@@ -31,6 +31,7 @@ main() {
 
   fi
 
+
   print_result $? 'Spotweb'
 }
 
