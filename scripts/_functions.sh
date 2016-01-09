@@ -349,17 +349,18 @@ install_dmg () {
     APPLICATION_FOLDER="/Applications"
 
     #echo "Mounting image..."
-    volume=`hdiutil mount -nobrowse "$HOME/Downloads/${SABNZBD_DIR}-osx.dmg" | tail -n1 | perl -nle '/(\/Volumes\/[^ ]+)/; print $1'`
+    volume=`hdiutil mount -nobrowse "$1" | tail -n1 | perl -nle '/(\/Volumes\/[^ ]+)/; print $1'`
 
     # Locate .app folder and move to /Applications
     app=`find $volume/. -name *.app -maxdepth 1 -type d -print0`
+
     #echo "Copying `echo $app | awk -F/ '{print $NF}'` into Application folder ..."
-    cp -R $app $APPLICATION_FOLDER
+    cp -R $app $APPLICATION_FOLDER/$app
     return $?
 
     # Unmount volume, delete temporal file
     hdiutil unmount $volume -quiet
-    rm "$HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
+    #rm "$1"
 }
 
 print_error() {
