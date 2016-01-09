@@ -6,7 +6,7 @@ if [ -f _functions.sh ]; then
 elif [ -f ../_functions.sh ]; then
     source ../_functions.sh
 else
-   echo "Config file functions.sh does not exist"
+   echo "Config file _functions.sh does not exist"
    exit 1
 fi
 
@@ -21,10 +21,7 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
-#	if ! cmd_exists 'serverinfo'; then
-  if cmd_exists 'serverinfo'; then
-		echo "OS X Server doesn't exists"
-
+	if ! cmd_exists 'serverinfo'; then
     if file_exists "$FOLDER_INSTALL/OS X Server 5.0.15.dmg"; then
       ask_for_sudo
       install_dmg "HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
@@ -33,12 +30,11 @@ main() {
         ask_for_sudo
         cp -R "$FOLDER_INSTALL/Server.app" "/Applications/Server.app" 
       else
-        echo "OS X Server App file NOT found"
-        exit 1
+        #echo "OS X Server App file NOT found in $FOLDER_INSTALL"
       fi
     fi    
 	fi
-	print_result $? 'OS X Server'
+	print_result $? 'OS X Server NOT found in $FOLDER_INSTALL"'
 }
 
 main
