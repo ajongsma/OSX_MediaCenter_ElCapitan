@@ -26,11 +26,11 @@ main() {
     SABNZBD_DIR="SABnzbd-${SABNZBD_VERSION}"
     SABNZBD_GZ="${SABNZBD_DIR}-osx.dmg"
 
-    download "http://freefr.dl.sourceforge.net/project/sabnzbdplus/sabnzbdplus/${SABNZBD_VERSION}/${SABNZBD_GZ}" "$HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
+    download "http://freefr.dl.sourceforge.net/project/sabnzbdplus/sabnzbdplus/${SABNZBD_VERSION}/${SABNZBD_GZ}" "$FOLDER_DOWNLOAD/${SABNZBD_DIR}-osx.dmg"
     print_result $? 'Download SabNZBD'
 
     ask_for_sudo
-    install_dmg "HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
+    install_dmg "$FOLDER_DOWNLOAD/${SABNZBD_DIR}-osx.dmg"
   fi
 
   print_result $? 'SabNZBD'
