@@ -22,15 +22,17 @@ fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
 	if ! folder_exists "$FOLDER_INSTALL/Server.app"; then
-    if file_exists "$FOLDER_INSTALL/OS X Server 5.0.15.dmg"; then
+
+    DMG_FILE="$FOLDER_INSTALL/OS X Server 5.0.15.dmg"
+    if file_exists $DMG_FILE; then
       ask_for_sudo
-      install_dmg "HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
+      install_dmg $DMG_FILE
     else
       if folder_exists "$FOLDER_INSTALL/Server.app"; then
         ask_for_sudo
         cp -R "$FOLDER_INSTALL/Server.app" "/Applications/Server.app" 
       else
-        print_error 'OS X Server App file NOT found in "$FOLDER_INSTALL"!\n'
+        print_error 'OS X Server App file NOT found in $FOLDER_INSTALL!\n'
         exit 1
       fi
     fi    
