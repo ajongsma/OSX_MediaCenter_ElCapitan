@@ -21,7 +21,7 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
-  if ! folder_exist '/Applications/SABnzbd.app/'; then
+  if ! folder_exists '/Applications/SABnzbd.app/'; then
     SABNZBD_VERSION=`curl -s http://sabnzbdplus.sourceforge.net/version/latest | head -n1`
     SABNZBD_DIR="SABnzbd-${SABNZBD_VERSION}"
     SABNZBD_GZ="${SABNZBD_DIR}-osx.dmg"

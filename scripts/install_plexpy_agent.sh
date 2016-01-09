@@ -26,9 +26,10 @@ main() {
     sudo cp ../config/launchctl/local.plex.plexpy.plist /Library/LaunchAgents/local.plex.plexpy.plist
     print_result $? 'Copy PlexPy launch agent'
 
+    sudo chown root:wheel /Library/LaunchAgents/local.plex.plexpy.plist
+    sudo chmod 644 /Library/LaunchAgents/local.plex.plexpy.plist
+
     launchctl load /Library/LaunchAgents/local.plex.plexpy.plist
-    print_result $? 'Install PlexPy launch agent'
-    #install_dmg "HOME/Downloads/${SABNZBD_DIR}-osx.dmg"
   fi
 
 	print_result $? 'LaunchAgent PlexPy'

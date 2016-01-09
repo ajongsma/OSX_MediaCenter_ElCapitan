@@ -12,6 +12,7 @@ INST_OSX_UPDATES="false"
 
 #-----------------------------------------------------------
 FOLDER_DOWNLOAD="$HOME/Downloads"
+FOLDER_INSTALL="$HOME/Downloads/Install"
 
 ## OSX Settings
 ENABLE_LIBRARY_VIEW="false"
