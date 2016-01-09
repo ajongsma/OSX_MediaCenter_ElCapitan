@@ -31,6 +31,8 @@ main() {
     for i in ${DIRECTORIES[@]}; do
         mkd "$i"
     done
+
+    print_result $? 'Creating folders'
 }
 
 main
