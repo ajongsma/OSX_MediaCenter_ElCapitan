@@ -30,7 +30,7 @@ main() {
         ask_for_sudo
         cp -R "$FOLDER_INSTALL/Server.app" "/Applications/Server.app" 
       else
-        print_error 'OS X Server App file NOT found in $FOLDER_INSTALL!\n'
+        print_error 'OS X Server App file NOT found in "$FOLDER_INSTALL"!\n'
         exit 1
       fi
     fi    
