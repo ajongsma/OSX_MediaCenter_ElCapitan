@@ -27,6 +27,10 @@ PLEX_RELEASE="64-bit"
 ## PlexPy
 PLEXPY_FOLDER="/Users/Plex/PlexPy"
 
+## Spotweb
+SPOTWEB_FOLDER="/Users/Plex/Spotweb"
+
+
 # Host used to test Internet connection
 PING_HOST="www.google.com"
 
