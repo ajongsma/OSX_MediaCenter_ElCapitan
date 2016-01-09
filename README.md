@@ -70,3 +70,6 @@ In Progress
 - sudo touch /private/var/db/lsd/com.apple.lsdschemes.plist
 - sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
 - https://support.apple.com/en-us/HT203129
+
+#####Other
+- sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
