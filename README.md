@@ -50,6 +50,7 @@ In Progress
 - http://matt.coneybeare.me/how-to-map-plex-media-server-to-your-home-domain/
 
 #####Dot files
+- https://github.com/alrra/dotfiles
 - https://github.com/nicolashery/mac-dev-setup
 - https://github.com/donnemartin/dev-setup
 - https://github.com/paulirish/dotfiles
