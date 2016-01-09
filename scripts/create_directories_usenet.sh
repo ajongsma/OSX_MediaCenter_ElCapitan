@@ -22,8 +22,8 @@ fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 declare -a DIRECTORIES=(
     "$HOME/Usenet"
-    "$HOME/Usenet Completed"
-    "$HOME/Usenet Incomplete"
+    "$HOME/Usenet/Completed"
+    "$HOME/Usenet/Incomplete"
 )
 
 main() {
