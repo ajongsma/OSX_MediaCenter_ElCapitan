@@ -21,18 +21,20 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
-	if ! file_exist '/Library/LaunchAgents/local.plex.plexpy.plist'; then
+  INSTALL_AGENT="local.sabnzbd.sabnzbd.plist"
+
+	if ! file_exist '/Library/LaunchAgents/$INSTALL_AGENT'; then
     ask_for_sudo
-    sudo cp ../config/launchctl/local.plex.plexpy.plist /Library/LaunchAgents/local.plex.plexpy.plist
+    sudo cp ../config/launchctl/$INSTALL_AGENT /Library/LaunchAgents/
     #print_result $? 'Copy PlexPy launch agent'
 
-    sudo chown root:wheel /Library/LaunchAgents/local.plex.plexpy.plist
-    sudo chmod 644 /Library/LaunchAgents/local.plex.plexpy.plist
+    sudo chown root:wheel /Library/LaunchAgents/$INSTALL_AGENT
+    sudo chmod 644 /Library/LaunchAgents/$INSTALL_AGENT
 
-    launchctl load /Library/LaunchAgents/local.plex.plexpy.plist
+    launchctl load /Library/LaunchAgents/$INSTALL_AGENT
   fi
 
-	print_result $? 'LaunchAgent PlexPy'
+	print_result $? 'LaunchAgent SabNZBD'
 }
 
 main
