@@ -346,6 +346,8 @@ mkd() {
 }
 
 install_dmg () {
+    ## !! ERROR on find with volume having a space !! ##
+
     APPLICATION_FOLDER="/Applications"
 
     #echo "Mounting image..."
