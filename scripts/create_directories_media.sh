@@ -7,13 +7,13 @@ elif [ -f ../_functions.sh ]; then
   source ../_functions.sh
 else
   echo "Config file functions.sh does not exist"
+  exit 1
 fi
 
 if [ -f config.sh ]; then
   source config.sh
 elif [ -f ../config.sh ]; then
   source ../config.sh
-  exit 1
 else
   echo "Config file config.sh does not exist"
   exit 1
@@ -31,8 +31,6 @@ main() {
     for i in ${DIRECTORIES[@]}; do
         mkd "$i"
     done
-
-    print_result $? 'Creating folders'
 }
 
 main
