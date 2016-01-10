@@ -38,6 +38,7 @@ Install
 - [ ] Auto-Sub
 - [x] CouchPotato (https://couchpota.to)
   * [x] CouchPotato LaunchAgent
+- [ ] NewzNAB
 - [ ] Plex Home Theater
 - [ ] Plex Media Server
   * [ ] Channel: Custom app store
