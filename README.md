@@ -29,9 +29,10 @@ Install
 ###### Done
 - HomeBrew
 - MySQL
+- OS X Server
 - Python PIP (Package Manager)
 - Python LXML
-- OS X Server
+- 
 - Cheetah
 - CouchPotato (https://couchpota.to)
 - SabNZBD+
