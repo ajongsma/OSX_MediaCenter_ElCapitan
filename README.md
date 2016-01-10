@@ -34,7 +34,9 @@ Install
   * Python LXML
 - Cheetah
 - CouchPotato (https://couchpota.to)
+  * CouchPotato LaunchAgent
 - SabNZBD+
+  * SabNZBD+ LaunchAgent
 
 ###### In Progress
 - Auto-Sub
