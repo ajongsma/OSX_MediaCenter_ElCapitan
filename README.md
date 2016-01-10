@@ -27,11 +27,11 @@ Performing a clean install:
 Install 
 =====
 ###### Done
-- HomeBrew
-- MySQL
-- OS X Server
-- Python PIP (Package Manager)
-  * Python LXML
+- [x] HomeBrew
+- [x] MySQL
+- [x] OS X Server
+- [x] Python PIP (Package Manager)
+  [x] * Python LXML
 - Cheetah
 - CouchPotato (https://couchpota.to)
   * CouchPotato LaunchAgent
