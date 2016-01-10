@@ -78,3 +78,4 @@ In Progress
 - sudo sed -i 's/lc-messages-dir	= \/usr\/share\/mysql/lc-messages-dir = \/usr\/local\/mysql\/share\nlc-messages		=en_GB\n/' /etc/mysql/my.cnf
 - sudo sed -i 's/myisam-recover	/myisam-recover-options	/' /etc/mysql/my.cnf
 - sudo sed -i 's/key-buffer   /key-buffer-size /' /etc/mysql/my.cnf
+- sed -i '/bind-address/d' /etc/mysql/my.cnf
