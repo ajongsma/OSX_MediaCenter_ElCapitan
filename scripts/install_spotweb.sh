@@ -82,6 +82,7 @@ main() {
 #  Include /Library/Server/Web/Config/apache2/sites/*.conf
 
 
+# http://synology.brickman.nl/syn_howto/HowTo%20-%20install%20Spotweb.txt
 
 # http://pablin.org/2015/04/30/configuring-jenkins-on-os-x-server/
 
