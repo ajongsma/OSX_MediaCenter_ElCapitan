@@ -28,6 +28,14 @@ Install
 =====
 ###### OS X Additions
 - [x] Cheetah
+- [ ] Dotfiles
+  * [ ] bash_aliases
+  * [ ] bash_autocomplete
+  * [ ] bash_exports
+  * [ ] bash_functions
+  * [ ] bash_options
+  * [ ] bash_profile
+  * [ ] bash_prompt
 - [x] HomeBrew
 - [x] MySQL
 - [x] OS X Server
