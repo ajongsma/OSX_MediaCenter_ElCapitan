@@ -43,7 +43,7 @@ Install
   * [x] Python LXML
 
 ###### Applications
-- [ ] Auto-Sub :small_red_triangle:
+- [ ] Auto-Sub (https://github.com/BenjV/autosub) :small_red_triangle:
 - [x] CouchPotato (https://couchpota.to)
   * [x] CouchPotato LaunchAgent
 - [ ] NewzNAB
