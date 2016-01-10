@@ -18,6 +18,10 @@ FOLDER_INSTALL="$HOME/Downloads/Install"
 ENABLE_LIBRARY_VIEW="false"
 ENABLE_MOUSE_TAPTOCLICK="false"
 
+## MySQL Settings
+MYSQL_ROOT_UID="root"
+MYSQL_ROOT_PW=""
+
 ## Plex
 PLEX_UID=""
 PLEX_PW=""
@@ -29,7 +33,8 @@ PLEXPY_FOLDER="/Users/Plex/PlexPy"
 
 ## Spotweb
 SPOTWEB_FOLDER="/Users/Plex/Spotweb"
-
+SPOTWEB_MYSQL_UID="spotweb"
+SPOTWEB_MYSQL_PW=""
 
 # Host used to test Internet connection
 PING_HOST="www.google.com"
