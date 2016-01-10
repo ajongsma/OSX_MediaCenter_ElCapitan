@@ -26,7 +26,27 @@ Performing a clean install:
 
 Install 
 =====
-In Progress
+###### Done
+- OS X Server
+- Python PIP (Package Manager)
+- Python LXML
+- CouchPotato (https://couchpota.to)
+- SabNZBD+
+
+###### In Progress
+- Auto-Sub
+- SickBeard
+- Sonarr
+- Spotweb
+- Plex Media Server
+- Plex Home Theater
+
+###### ToDo
+- Plex Media Server - Channel: Custom app store
+- Plex Media Server - Channel: Hue
+- Plex Media Server - Channel: TraktTV
+- etc.
+
 
 
 #####Plex Information pages
