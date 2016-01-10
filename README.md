@@ -43,7 +43,7 @@ Install
   * [x] Python LXML
 
 ###### Applications
-- [ ] Auto-Sub
+- [ ] Auto-Sub :small_red_triangle:
 - [x] CouchPotato (https://couchpota.to)
   * [x] CouchPotato LaunchAgent
 - [ ] NewzNAB
@@ -56,7 +56,7 @@ Install
   * [x] SabNZBD+ LaunchAgent
 - [ ] SickBeard
 - [ ] Sonarr
-- [ ] Spotweb
+- [ ] Spotweb :small_red_triangle:
 - [ ] etc.
 
 Usefull links:
