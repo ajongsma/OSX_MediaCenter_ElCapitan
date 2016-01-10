@@ -26,33 +26,29 @@ Performing a clean install:
 
 Install 
 =====
-###### Done
+###### OS X Additions
+- [x] Cheetah
 - [x] HomeBrew
 - [x] MySQL
 - [x] OS X Server
 - [x] Python PIP (Package Manager)
   * [x] Python LXML
-- [x] Cheetah
+
+###### Applications
+- [ ] Auto-Sub
 - [x] CouchPotato (https://couchpota.to)
   * [x] CouchPotato LaunchAgent
+- [ ] Plex Home Theater
+- [ ] Plex Media Server
+  * [ ] Channel: Custom app store
+  * [ ] Channel: Hue
+  * [ ] Channel: TraktTV
 - [x] SabNZBD+
   * [x] SabNZBD+ LaunchAgent
-
-###### In Progress
-- Auto-Sub
-- SickBeard
-- Sonarr
-- Spotweb
-- Plex Media Server
-- Plex Home Theater
-
-###### ToDo
-- Plex Media Server - Channel: Custom app store
-- Plex Media Server - Channel: Hue
-- Plex Media Server - Channel: TraktTV
-- etc.
-
-
+- [ ] SickBeard
+- [ ] Sonarr
+- [ ] Spotweb
+- [ ] etc.
 
 #####Plex Information pages
 - https://plex.tv/devices.xml
