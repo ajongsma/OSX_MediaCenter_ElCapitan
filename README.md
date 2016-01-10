@@ -73,3 +73,8 @@ In Progress
 
 #####Other
 - sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
+- sudo sed -i 's/"$/:\/usr\/local\/mysql\/bin"/' /etc/environment
+- sudo sed -i 's/basedir		= \/usr/basedir		=\/usr\/local\/mysql/' /etc/mysql/my.cnf
+- sudo sed -i 's/lc-messages-dir	= \/usr\/share\/mysql/lc-messages-dir = \/usr\/local\/mysql\/share\nlc-messages		=en_GB\n/' /etc/mysql/my.cnf
+- sudo sed -i 's/myisam-recover	/myisam-recover-options	/' /etc/mysql/my.cnf
+- sudo sed -i 's/key-buffer   /key-buffer-size /' /etc/mysql/my.cnf
