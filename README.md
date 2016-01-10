@@ -28,6 +28,7 @@ Install
 =====
 ###### Done
 - OS X Server
+- MySQL
 - Python PIP (Package Manager)
 - Python LXML
 - Cheetah
