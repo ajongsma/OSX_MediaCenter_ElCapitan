@@ -31,7 +31,7 @@ Install
 - MySQL
 - OS X Server
 - Python PIP (Package Manager)
-- Python LXML
+⋅⋅* Python LXML
 - Cheetah
 - CouchPotato (https://couchpota.to)
 - SabNZBD+
