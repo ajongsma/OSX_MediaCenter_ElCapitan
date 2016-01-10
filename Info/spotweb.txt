@@ -1,0 +1,38 @@
+Spotweb Install Wizard
+
+-= Overview =-
+Check test results			  				:
+-------------------------------------------   --------
+Click										: Next
+
+
+-= Database settings =-
+Type										: mysql
+Server										: localhost
+Database									: $SPOTWEB_MYSQL_DB
+Username									: $SPOTWEB_MYSQL_UID
+Password									: $SPOTWEB_MYSQL_PW
+-------------------------------------------   --------
+Click										: Verify database
+
+
+-= Usenet server =-
+Usenet server 								: e.g. Supernews EU
+Username									: ********
+Password									: ********
+-------------------------------------------   --------
+Click										: Verify usenet server
+
+
+-= Spotweb type =-
+Spotweb usage								: Public
+Username									: *****
+Password									: *****
+Password (confirm)							: *****
+First name									: *****
+Last name									: *****
+Email address								: *****
+-------------------------------------------   --------
+Click										: Create system
+
+
