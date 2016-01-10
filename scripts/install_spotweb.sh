@@ -50,6 +50,11 @@ main() {
 
 
 
+if ! mysql_db_exist 'ssspotweb'; then
+  echo "22"
+  print_error 'file not found'
+exit;
+fi
 
 
 

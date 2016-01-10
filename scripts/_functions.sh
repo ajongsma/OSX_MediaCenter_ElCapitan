@@ -124,10 +124,13 @@ extract() {
 
 file_exists() {
     if [ -f "$1" ]; then
+        echo "file EXISTS (1): $?"
         return $?
     else
+        echo "file NOT exists (2): $?"
         return 1
     fi
+    echo "file EXISTS : $?"
 }
 
 folder_exists() {
@@ -312,7 +315,7 @@ check_server_port() {
     fi
 }
 
-function variable_replace() {
+variable_replace() {
     _variable="${1}"
     _replace="${2}"
     _file="${3}"
@@ -342,6 +345,21 @@ mkd() {
         else
             execute "mkdir -p $1" "$1"
         fi
+    fi
+}
+
+mysql_db_exist() {
+    MYSQL_DBNAME="${1}"
+    MYSQL_DBUSER="${2}"
+    MYSQL_DBPW="${3}"
+
+    DBEXISTS=$(mysql -u$MYSQL_DBUSER -p$MYSQL_DBPW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$MYSQL_DBNAME"';" 2>/dev/null | grep "$MYSQL_DBNAME" > /dev/null; echo "$?")
+    if [ $DBEXISTS -eq 0 ];then
+        #echo "A database with the name $MYSQL_DBNAME already exists."
+        return $?
+    else
+        #echo " database $MYSQL_DBNAME does not exist."
+        return 1
     fi
 }
 
