@@ -31,6 +31,9 @@ PLEX_RELEASE="64-bit"
 ## PlexPy
 PLEXPY_FOLDER="/Users/Plex/PlexPy"
 
+## Autosub
+AUTOSUB_FOLDER="/Users/Plex/Autosub"
+
 ## Spotweb
 SPOTWEB_FOLDER="/Users/Plex/Spotweb"
 SPOTWEB_MYSQL_DB="spotweb"

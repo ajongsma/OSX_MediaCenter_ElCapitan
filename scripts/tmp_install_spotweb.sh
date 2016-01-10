@@ -30,7 +30,7 @@ main() {
   # Let's do it
   if ! folder_exists $SPOTWEB_FOLDER; then
     sudo mkdir -p $SPOTWEB_FOLDER
-    sudo chown `whoami`:staff $SPOTWEB_FOLDER
+    sudo chown -R `whoami`:staff $SPOTWEB_FOLDER
 
     git clone https://github.com/spotweb/spotweb.git $SPOTWEB_FOLDER
     print_result $? 'Download Spotweb'
