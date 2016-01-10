@@ -31,12 +31,12 @@ Install
 - [x] MySQL
 - [x] OS X Server
 - [x] Python PIP (Package Manager)
-  [x] * Python LXML
-- Cheetah
-- CouchPotato (https://couchpota.to)
-  * CouchPotato LaunchAgent
-- SabNZBD+
-  * SabNZBD+ LaunchAgent
+  * [x] Python LXML
+- [x] Cheetah
+- [x] CouchPotato (https://couchpota.to)
+  * [x] CouchPotato LaunchAgent
+- [x] SabNZBD+
+  * [x] SabNZBD+ LaunchAgent
 
 ###### In Progress
 - Auto-Sub
