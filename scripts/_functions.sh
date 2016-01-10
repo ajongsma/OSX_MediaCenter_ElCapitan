@@ -348,12 +348,31 @@ mkd() {
     fi
 }
 
+mysql_config_login_add() {
+    mySqlHost="${1}"
+    mySqlUser="${2}"
+    mySqlPassword="${3}"
+
+    expect -c "
+    spawn mysql_config_editor set --login-path=$mySqlUser --host=$mySqlHost --user=$mySqlUser --password
+    expect -nocase \"Enter password:\" {send \"$mySqlPassword\r\"; interact}
+    "
+
+    return $?
+}
+
 mysql_db_exist() {
     MYSQL_DBNAME="${1}"
     MYSQL_DBUSER="${2}"
     MYSQL_DBPW="${3}"
 
-    DBEXISTS=$(mysql -u$MYSQL_DBUSER -p$MYSQL_DBPW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$MYSQL_DBNAME"';" 2>/dev/null | grep "$MYSQL_DBNAME" > /dev/null; echo "$?")
+    if [ -z "`mysql_config_editor print --login-path=root`" ]; then
+        echo "mySQL login root NOT exist"
+        DBEXISTS=$(mysql -u$MYSQL_DBUSER -p$MYSQL_DBPW --batch --skip-column-names -e "SHOW DATABASES LIKE '"$MYSQL_DBNAME"';" | grep "$MYSQL_DBNAME" > /dev/null; echo "$?")
+    else
+        echo "mySQL login root exists "
+        DBEXISTS=$(mysql --login-path=root --batch --skip-column-names -e "SHOW DATABASES LIKE '"$MYSQL_DBNAME"';" | grep "$MYSQL_DBNAME" > /dev/null; echo "$?")
+    fi
     if [ $DBEXISTS -eq 0 ];then
         #echo "A database with the name $MYSQL_DBNAME already exists."
         return $?

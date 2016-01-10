@@ -33,6 +33,7 @@ PLEXPY_FOLDER="/Users/Plex/PlexPy"
 
 ## Spotweb
 SPOTWEB_FOLDER="/Users/Plex/Spotweb"
+SPOTWEB_MYSQL_DB="spotweb"
 SPOTWEB_MYSQL_UID="spotweb"
 SPOTWEB_MYSQL_PW=""
 
