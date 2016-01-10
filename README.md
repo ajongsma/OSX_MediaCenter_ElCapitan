@@ -59,12 +59,14 @@ Install
 - [ ] Spotweb
 - [ ] etc.
 
-#####Plex Information pages
+Usefull links:
+=====
+###### Plex Information pages
 - https://plex.tv/devices.xml
 - https://plex.tv/pms/friends/all
 - http://pooky.local:32400/status/sessions
 
-#####OS X Server
+###### OS X Server
 - /Library/Server/Web/Config/apache2/sites/
 - /Library/Server/Web/Config/Apache2/httpd_server_app.conf
 - /Library/Server/web/config/apache2/httpd_server_app.conf.default
@@ -79,7 +81,7 @@ Install
 - https://clickontyler.com/support/a/41/osx-server-app-virtualhostx/
 - http://matt.coneybeare.me/how-to-map-plex-media-server-to-your-home-domain/
 
-#####Dot files
+###### Dot files
 - https://github.com/alrra/dotfiles
 - https://github.com/nicolashery/mac-dev-setup
 - https://github.com/donnemartin/dev-setup
@@ -89,10 +91,10 @@ Install
 - http://dotfiles.github.io
 - https://github.com/natelandau/awesome-osx
 
-#####Usefull
+###### Github
 - sphp https://github.com/conradkleinespel/sphp-osx
 
-#####lsd error
+###### lsd error
 - sudo mkdir /private/var/db/lsd
 - xattr -wr com.apple.finder.copy.source.checksum#N 4 /private/var/db/lsd
 - xattr -wr com.apple.metadata:_kTimeMachineNewestSnapshot 50 /private/var/db/lsd
@@ -101,7 +103,7 @@ Install
 - sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
 - https://support.apple.com/en-us/HT203129
 
-#####Other
+###### Other
 - sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
 - sudo sed -i 's/"$/:\/usr\/local\/mysql\/bin"/' /etc/environment
 - sudo sed -i 's/basedir		= \/usr/basedir		=\/usr\/local\/mysql/' /etc/mysql/my.cnf
