@@ -34,6 +34,9 @@ PLEXPY_FOLDER="/Users/Plex/PlexPy"
 ## Autosub
 AUTOSUB_FOLDER="/Users/Plex/Autosub"
 
+## CouchPotato
+COUCHPOTATO_FOLDER="/Users/Plex/CouchPotato"
+
 ## Spotweb
 SPOTWEB_FOLDER="/Users/Plex/Spotweb"
 SPOTWEB_MYSQL_DB="spotweb"
