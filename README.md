@@ -45,7 +45,9 @@ Install
 ###### Applications
 - [ ] Auto-Sub (https://github.com/BenjV/autosub) :small_red_triangle:
 - [x] CouchPotato (https://couchpota.to)
-  * [x] CouchPotato LaunchAgent
+  * [x] LaunchAgent
+  * [ ] SabNZBD+ integration
+  * [ ] Spotweb integration
 - [ ] NewzNAB
 - [ ] Plex Home Theater
 - [ ] Plex Media Server
@@ -53,11 +55,13 @@ Install
   * [ ] Channel: Hue
   * [ ] Channel: TraktTV
 - [x] SabNZBD+
-  * [x] SabNZBD+ LaunchAgent
+  * [x] LaunchAgent
+  * [x] Folder creation
 - [ ] SickBeard
+  * [ ] Spotweb integration
 - [ ] Sonarr
 - [ ] Spotweb :small_red_triangle:
-  * [ ] Periodic retrieval LaunchAgent
+  * [ ] LaunchAgent: Periodic retrieval
   * [ ] SabNZBD+ integration
 - [ ] etc.
 
