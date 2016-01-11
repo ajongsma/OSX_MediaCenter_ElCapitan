@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Clear DNS cache
+alias clear-dns-cache='sudo dscacheutil -flushcache; \
+                       sudo killall -HUP mDNSResponder'
+
+# Hide/Show hidden files in Finder
+alias hide-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+alias show-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+
+alias updatedb="sudo /usr/libexec/locate.updatedb"
+
+alias grep='grep --color=auto'
+
+alias ls='ls -FG'
