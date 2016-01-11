@@ -61,6 +61,7 @@ Install
   * [ ] Spotweb integration
 - [ ] Sonarr
 - [ ] Spotweb :small_red_triangle:
+  * [ ] API
   * [ ] LaunchAgent: Periodic retrieval
   * [ ] SabNZBD+ integration
 - [ ] etc.
