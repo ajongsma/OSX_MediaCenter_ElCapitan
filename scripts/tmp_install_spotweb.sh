@@ -55,13 +55,13 @@ main() {
     print_result $? 'Created user $SPOTWEB_MYSQL_UID in the MySQL database $SPOTWEB_MYSQL_DB'
 
     mysql --login-path=root -e "GRANT ALL PRIVILEGES ON $SPOTWEB_MYSQL_DB.* TO $SPOTWEB_MYSQL_UID@'localhost' IDENTIFIED BY '$SPOTWEB_MYSQL_PW';"
+
+    mysql -uroot -p -e "GRANT ALL PRIVILEGES ON $SPOTWEB_MYSQL_DB.* TO spotweb@'localhost' IDENTIFIED BY 'spotweb@mini';"
+
     print_result $? 'Granted access of user $SPOTWEB_MYSQL_UID to the MySQL database $SPOTWEB_MYSQL_DB'
   fi
 
 
-  open http://localhost/spotweb/install.php
-  echo " --- press any key to continue ---"
-  read -n 1 -s
 
   ## PHP extension: gettext           - Not OK
   ## GD           : FreeType Support  - Not OK
@@ -75,9 +75,6 @@ main() {
 
 # /Library/Server/Web/Config/apache2/webapps/
 
-
-# ps aux | grep httpd
-
 # cat /Library/Server/Web/Config/apache2/httpd_server_app.conf
 #  Include /Library/Server/Web/Config/apache2/sites/*.conf
 
@@ -89,12 +86,12 @@ main() {
 # http://mar2zz.tweakblogs.net/blog/6724/spotweb-als-provider.html
 # http://www.happylark.nl/spotweb-instellen/
 
-  
-
-
-
 
 exit
+
+  #open http://localhost/spotweb/install.php
+  #echo " --- press any key to continue ---"
+  #read -n 1 -s
 
   print_result $? 'Spotweb'
 }

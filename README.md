@@ -104,6 +104,9 @@ Usefull links:
 - https://support.apple.com/en-us/HT203129
 
 ###### Other
+- https://github.com/spotweb/spotweb/wiki/Performance-tips
+
+###### Sed
 - sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
 - sudo sed -i 's/"$/:\/usr\/local\/mysql\/bin"/' /etc/environment
 - sudo sed -i 's/basedir		= \/usr/basedir		=\/usr\/local\/mysql/' /etc/mysql/my.cnf

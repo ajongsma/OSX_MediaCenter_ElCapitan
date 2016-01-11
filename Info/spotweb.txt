@@ -36,3 +36,13 @@ Email address								: *****
 Click										: Create system
 
 
+-= dbsettings.inc.php =-
+Create a file in the Spotweb install folder : dbsettings.inc.php
+
+Paste the data in that file as seen. E.g.
+<?php 
+$dbsettings['engine'] = 'pdo_mysql';
+$dbsettings['host'] = 'localhost';
+$dbsettings['dbname'] = 'spotweb';
+$dbsettings['user'] = '********';
+$dbsettings['pass'] = '********';

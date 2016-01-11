@@ -21,27 +21,27 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
-  # Sanity check
-	if ! cmd_exists 'brew'; then
-		print_error 'Homebrew required'
-	fi
-
-  #Let's do it
   if ! cmd_exists 'mysql'; then
-    brew install homebrew/versions/mysql56
+    # Sanity check
+    if ! cmd_exists 'brew'; then
+      print_error 'Homebrew required'
+      exit
+    fi
+    brew install homebrew/versions/mysql55
 
-    ln -sfv /usr/local/opt/mysql56/*.plist ~/Library/LaunchAgents
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql56.plist
+    ln -sfv /usr/local/opt/mysql55/*.plist ~/Library/LaunchAgents
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql55.plist
 
     mysql.server start
 
     mysql_secure_installation
 
     ## brew unlink mysql57
-    ## brew switch mysql 5.7.10
+    ## brew switch mysql 5.5
+    ## brew unlink mysql && brew link mysql55 --force
   fi
   
-	print_result $? 'MySQL 5.6'
+	print_result $? 'MySQL 5.5'
 }
 
 main
