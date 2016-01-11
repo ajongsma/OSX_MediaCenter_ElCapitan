@@ -46,3 +46,16 @@ $dbsettings['host'] = 'localhost';
 $dbsettings['dbname'] = 'spotweb';
 $dbsettings['user'] = '********';
 $dbsettings['pass'] = '********';
+
+Change to install directory and run:		php retrieve.php
+
+
+
+#### php retrieve.php
+If error: Net_NNTP_Protocol_Client->throwError('Failed to read ...')
+Change  : Spotweb -> Preferences -> Newsservers -> Enctyption: Disable, Port: 119 
+####
+
+#### Web GUI shows only text
+Check server app for a web redirect to https. If exist, remove the redirect.
+####
