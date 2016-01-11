@@ -57,6 +57,8 @@ Install
 - [ ] SickBeard
 - [ ] Sonarr
 - [ ] Spotweb :small_red_triangle:
+  * [ ] Periodic retrieval LaunchAgent
+  * [ ] SabNZBD+ integration
 - [ ] etc.
 
 Usefull links:
