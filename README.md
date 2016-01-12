@@ -68,10 +68,14 @@ Install
 
 Usefull links:
 =====
-###### Plex Information pages
-- https://plex.tv/devices.xml
+###### Plex Information page(s)
+- Client names: https://plex.tv/devices.xml
+- User names: http://app.plex.tv/web/app#!/settings/users
 - https://plex.tv/pms/friends/all
 - http://pooky.local:32400/status/sessions
+
+###### Hue informatino page(s)
+- Hue bridge IP: https://www.meethue.com/api/nupnp
 
 ###### OS X Server
 - /Library/Server/Web/Config/apache2/sites/
