@@ -126,3 +126,9 @@ Usefull links:
 - sudo sed -i 's/myisam-recover	/myisam-recover-options	/' /etc/mysql/my.cnf
 - sudo sed -i 's/key-buffer   /key-buffer-size /' /etc/mysql/my.cnf
 - sed -i '/bind-address/d' /etc/mysql/my.cnf
+
+###### Food for Thought
+- http://stackoverflow.com/questions/26493762/yosemite-el-capitan-php-gd-mcrypt-installation
+- http://www.michaelbagnall.com/blogs/php-gd-fixing-your-php-server-mac-os-x-without-homebrewmacports
+- https://github.com/ElusiveMind/osx_server_enhancements
+- https://github.com/philcook/brew-php-switcher
