@@ -52,7 +52,7 @@ Install
 - [ ] Plex Home Theater
 - [ ] Plex Media Server
   * [ ] Channel: Custom app store
-  * [ ] Channel: Hue (https://github.com/ledge74/HelloHue)
+  * [x] Channel: HelloHue (https://github.com/ledge74/HelloHue)
   * [ ] Channel: TraktTV
 - [x] SabNZBD+
   * [x] LaunchAgent
