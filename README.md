@@ -72,7 +72,7 @@ Usefull links:
 - Client names: https://plex.tv/devices.xml
 - User names: http://app.plex.tv/web/app#!/settings/users
 - Friend names: https://plex.tv/pms/friends/all
-- Current sessions: http://pooky.local:32400/status/sessions
+- Current sessions: http://localhost:32400/status/sessions
 
 ###### Hue informatino page(s)
 - Hue bridge IP: https://www.meethue.com/api/nupnp
