@@ -19,14 +19,18 @@ else
   exit 1
 fi
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## https://forums.plex.tv/discussion/193095/rel-hellohue-sync-and-control-your-philips-hue-lights-with-plex
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 main() {
-  # Sanity check
+  ## Sanity check
   if [ "${PLEX_PMS_HELLOHUE}" == "" ]; then
     echo "Error: Not all config setting have been found set, please check config.sh."
     exit 1
   fi
 
+  ## Let's do it
   if ! folder_exists $PLEX_PMS_HELLOHUE; then
     ask_for_sudo
     sudo mkdir -p $PLEX_PMS_HELLOHUE
