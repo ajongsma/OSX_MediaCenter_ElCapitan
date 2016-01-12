@@ -35,6 +35,7 @@ Email address								: *****
 -------------------------------------------   --------
 Click										: Create system
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -= dbsettings.inc.php =-
 Create a file in the Spotweb install folder : dbsettings.inc.php
@@ -49,6 +50,10 @@ $dbsettings['pass'] = '********';
 
 Change to install directory and run:		php retrieve.php
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+If the installation went succesfull, change security settings
+User & Group management -> Userlist -> Username: Anonymous	: Anonymous user - closed system 
 
 
 #### php retrieve.php
