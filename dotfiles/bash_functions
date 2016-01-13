@@ -3,6 +3,7 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 cd() { builtin cd "$@"; ll; }                                       # Always list directory contents upon 'cd'
+cdf() { cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"; } # cdr: Change working directory to the top-most Finder window location
 mcd () { mkdir -p "$1" && cd "$1"; }                                # mcd:          Makes new Dir and jumps inside
 trash () { command mv "$@" ~/.Trash ; }                             # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }                            # ql:           Opens any file in MacOS Quicklook Preview
