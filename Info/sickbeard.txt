@@ -11,6 +11,7 @@ Click										: Save Changes
 
 -= Config - Search Settings =-
 -- Episode Search
+Usenet Retention							: ** Check download retention of the usenet provider Days Binary Retention e.g. 2357
 Ignore Words								: german,french,core2hd,swedish,480p
 -------------------------------------------   --------
 Click										: Save Changes
@@ -23,7 +24,7 @@ Click										: Save Changes
 
 -= Config - Post Processing =-
 -- Post-Processing
-TV Download Dir 							: $HOME/Media/Series
+TV Download Dir 							: $HOME/Downloads/Usenet/Completed
 Keep Original Files 						: Disable
 -- Naming
 Name Pattern								: Custom -> Season %0S/%SN - S%0SE%0E - %QN-%RG

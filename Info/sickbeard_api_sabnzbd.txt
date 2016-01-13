@@ -1,0 +1,17 @@
+Open SabNZBD -> Config -> General
+API Key										: * write down
+NZB Key										: * write down
+
+Open SickBeard -> Search Settings
+Search NZBs									: Enable
+NZB Method									: SABnzbd
+SABnzbd URL									: ** http://<HOSTNAME>:$SABNZBD_PORT/ e.g. http://localhost:8080/
+SABnzbd API Key								: ** SABnzbd API Key
+SABnzbd Category							: tv
+-------------------------------------------   --------
+Click										: Test SABnzbd
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+*** Config is saved into $SICKBEARD_FOLDER/config.ini
