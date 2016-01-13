@@ -22,6 +22,7 @@ fi
 declare -a FILES_TO_SYMLINK=(
     'dotfiles/bash_aliases'
     'dotfiles/bash_autocomplete'
+    'dotfiles/bash_colors'
     'dotfiles/bash_exports'
     'dotfiles/bash_functions'
     'dotfiles/bash_logout'
