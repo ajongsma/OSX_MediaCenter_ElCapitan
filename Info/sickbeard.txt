@@ -1,0 +1,32 @@
+Spotweb Install Wizard
+
+-= Config - General =-
+-- Misc
+Launch Browser								: Disable
+-- API
+Enable API									: Enable
+Generate									: Click Generate
+-------------------------------------------   --------
+Click										: Save Changes
+
+-= Config - Search Settings =-
+-- Episode Search
+Ignore Words								: german,french,core2hd,swedish,480p
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+-= Config - Search Providers =-
+-- Provider Priorities						: Sick Beard Index, Womble's Indes
+-------------------------------------------   --------
+Click										: Save Changes
+
+-= Config - Post Processing =-
+-- Post-Processing
+TV Download Dir 							: 
+Keep Original Files 						: Disable
+-- Naming
+Name Pattern								: 
+Multi-Episode Style							:
+-------------------------------------------   --------
+Click										: Save Changes

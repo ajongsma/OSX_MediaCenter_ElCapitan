@@ -38,6 +38,9 @@ AUTOSUB_FOLDER="/Users/Plex/Autosub"
 ## CouchPotato
 COUCHPOTATO_FOLDER="/Users/Plex/CouchPotato"
 
+## Sickbeard
+SICKBEARD_FOLDER="/Users/Plex/Sickbeard"
+
 ## Spotweb
 SPOTWEB_FOLDER="/Users/Plex/Spotweb"
 SPOTWEB_MYSQL_DB="spotweb"

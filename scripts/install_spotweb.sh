@@ -29,6 +29,7 @@ main() {
 
   # Let's do it
   if ! folder_exists $SPOTWEB_FOLDER; then
+    ask_for_sudo
     sudo mkdir -p $SPOTWEB_FOLDER
     sudo chown -R `whoami`:staff $SPOTWEB_FOLDER
 
