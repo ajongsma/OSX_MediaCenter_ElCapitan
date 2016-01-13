@@ -39,7 +39,7 @@ main() {
     git clone -b beta https://github.com/trakt/Plex-Trakt-Scrobbler.git $PLEX_PMS_TRAKTTV
     print_result $? 'Download PMS channel TraktTV'
 
-    sudo ln -s $PLEX_PMS_TRAKTTV $HOME/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/TraktTV-beta.bundle
+    ln -s $PLEX_PMS_TRAKTTV/Trakttv.bundle $HOME/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/TraktTV-beta.bundle
   fi
 
   print_result $? 'Plex PMS - TraktTV'

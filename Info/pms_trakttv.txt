@@ -1,0 +1,46 @@
+Plex Media Server - Channel TraktTV
+
+***
+Click on the cog wheel (settings) of the TraktTV PMS channel
+***
+
+Take note of the Authentication PIN and go to the URL as indicated e.g. https://trakt.tv/pin/xxxx
+Copy the shown pin number as seen on trakt.tv, paste it into the PIN field
+-------------------------------------------   --------
+Click										: Save
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Go to the URL http://trakt-for-plex.github.io/configuration
+Connect										: ** Select PMS Name
+
+-= Configuration - Server =-
+** Verify settings
+
+-= Configuration - Accounts =-
+** Verify settings Trakt
+** Verify settings Plex
+
+-= Configuration - Rules =-
+-- User Rules
+Account 									: Map
+Name										: **PlexTV Username
+-------------------------------------------   --------
+Click										: Save icon
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Plex Media Server - Channel TraktTV
+
+***
+Click on the icon of the TraktTV PMS channel
+***
+
+***
+Click on the icon Sync
+Click on the icon Full - Status
+***
+
+
+In case of issues, the log file of the channel is located here:
+~/Library/Logs/PMS Plugin Logs/com.plexapp.plugins.trakttv.log
