@@ -58,6 +58,7 @@ Install
   * [x] LaunchAgent
   * [x] Folder creation
 - [x] SickBeard
+  * [x] LaunchAgent
   * [ ] Spotweb integration
 - [ ] Sonarr
 - [ ] Spotweb :small_red_triangle:
