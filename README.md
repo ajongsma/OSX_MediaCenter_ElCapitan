@@ -116,6 +116,11 @@ Usefull links:
 - sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
 - https://support.apple.com/en-us/HT203129
 
+###### OS X Server WebApp
+- Running Node.js + Ghost as a webapp on OS X Mavericks with Server 3.2 (https://gist.github.com/joey-coleman/11111811)
+- Creating a apache-proxy webapp on OS X using Server.app (https://gist.github.com/joey-coleman/10016371)
+- Configuring Jenkins on OS X Server (http://pablin.org/2015/04/30/configuring-jenkins-on-os-x-server/)
+
 ###### Other
 - https://github.com/spotweb/spotweb/wiki/Performance-tips
 
