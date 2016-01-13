@@ -22,9 +22,17 @@ Connect										: ** Select PMS Name
 ** Verify settings Plex
 
 -= Configuration - Rules =-
+-- Account Rules
+Account 									: **Plex Username
+Client										: Any
+Name										: Any
+Address										: Any
+-------------------------------------------   --------
+Click										: Save icon
+
 -- User Rules
 Account 									: Map
-Name										: **PlexTV Username
+Name										: **TraktTV Username
 -------------------------------------------   --------
 Click										: Save icon
 
