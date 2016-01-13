@@ -57,7 +57,7 @@ Install
 - [x] SabNZBD+
   * [x] LaunchAgent
   * [x] Folder creation
-- [ ] SickBeard
+- [x] SickBeard
   * [ ] Spotweb integration
 - [ ] Sonarr
 - [ ] Spotweb :small_red_triangle:
