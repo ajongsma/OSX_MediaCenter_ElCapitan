@@ -120,6 +120,7 @@ Usefull links:
 - Running Node.js + Ghost as a webapp on OS X Mavericks with Server 3.2 (https://gist.github.com/joey-coleman/11111811)
 - Creating a apache-proxy webapp on OS X using Server.app (https://gist.github.com/joey-coleman/10016371)
 - Configuring Jenkins on OS X Server (http://pablin.org/2015/04/30/configuring-jenkins-on-os-x-server/)
+- unning Django webapps with OS X Server.app (http://jelockwood.blogspot.nl/2013/06/running-django-webapps-with-os-x.html)
 
 ###### Other
 - https://github.com/spotweb/spotweb/wiki/Performance-tips
