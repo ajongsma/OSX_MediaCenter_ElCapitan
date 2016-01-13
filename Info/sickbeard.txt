@@ -23,10 +23,40 @@ Click										: Save Changes
 
 -= Config - Post Processing =-
 -- Post-Processing
-TV Download Dir 							: 
+TV Download Dir 							: $HOME/Media/Series
 Keep Original Files 						: Disable
 -- Naming
-Name Pattern								: 
-Multi-Episode Style							:
+Name Pattern								: Custom -> Season %0S/%SN - S%0SE%0E - %QN-%RG
+Multi-Episode Style							: Extend (Limited, E-prefixed)
 -------------------------------------------   --------
 Click										: Save Changes
+
+
+-= Home - Add Shows =-
+** Choose applicable e.g. Add Existing Show
+
+Click										: New
+Browse 										: $HOME/Media/Series
+Click										: OK
+-------------------------------------------   --------
+Click										: Submit
+
+-- New Show - Step 1 =-
+** Change language in dropdown if needed, click Search and select applicable show
+Click										: Next
+
+-- New Show - Step 2 =-
+** Verify pre-chosen Destination folder
+Click										: Next
+
+-- New Show - Step 3 =-
+Initial status of missing episodes			: * Choose applicable
+Preferred quality of episodes to Download 	: HD
+Click										: Save Defaults
+-------------------------------------------   --------
+Click										: Add Show
+
+***
+Continue with adding TV Shows
+***
+

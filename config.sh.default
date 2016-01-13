@@ -28,6 +28,7 @@ PLEX_PW=""
 PLEX_PUBLIC="false"
 PLEX_RELEASE="64-bit"
 PLEX_PMS_HELLOHUE="/Users/Plex/HelloHue"
+PLEX_PMS_TRAKTTV"/Users/Plex/TraktTV"
 
 ## PlexPy
 PLEXPY_FOLDER="/Users/Plex/PlexPy"
