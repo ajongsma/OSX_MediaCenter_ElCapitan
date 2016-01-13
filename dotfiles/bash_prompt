@@ -3,7 +3,6 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 enable_color_support() {
-
     declare DOTFILES_DIR_PATH="$(dirname $(dirname $(readlink $BASH_SOURCE)))"
 
     if [[ $COLORTERM == gnome-* && $TERM == xterm ]] \
@@ -17,7 +16,6 @@ enable_color_support() {
     if [ "$OS" == 'osx' ]; then
         source "$DOTFILES_DIR_PATH/.bash_colors"
     fi
-
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -28,7 +26,6 @@ enable_color_support() {
 # prompt string is shown)
 
 get_git_repository_details() {
-
     local branchName=''
     local tmp=''
 
@@ -63,27 +60,22 @@ get_git_repository_details() {
 
     [ -n "$tmp" ] && tmp=" [$tmp]"
 
-
     branchName="$( printf "$( git rev-parse --abbrev-ref HEAD 2> /dev/null \
         || git rev-parse --short HEAD 2> /dev/null \
         || printf " (unknown)" )" | tr -d "\n" )"
 
-
     printf "%s" "$1$branchName$tmp"
-
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 set_prompts() {
-
     local black='' blue='' bold='' cyan='' green='' orange='' \
           purple='' red='' reset='' white='' yellow=''
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if [ -x /usr/bin/tput ] && tput setaf 1 &> /dev/null; then
-
         tput sgr0 # Reset colors
 
         bold=$(tput bold)
@@ -101,9 +93,7 @@ set_prompts() {
         red=$(tput setaf 124)
         white=$(tput setaf 15)
         yellow=$(tput setaf 136)
-
     else
-
         bold=''
         reset="\e[0m"
 
@@ -116,7 +106,6 @@ set_prompts() {
         red="\e[1;31m"
         white="\e[1;37m"
         yellow="\e[1;33m"
-
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -128,8 +117,7 @@ set_prompts() {
     # | PS1 - Default interactive prompt                               |
     # ------------------------------------------------------------------
 
-    PS1="\[\033]0;\w\007\]"         # Terminal title (set to the
-                                    # current working directory)
+    PS1="\[\033]0;\w\007\]"         # Terminal title (set to the current working directory)
     PS1+="\[$bold\]"
     PS1+="\[$orange\]\u"            # Username
     PS1+="\[$white\]@"
@@ -186,7 +174,6 @@ set_prompts() {
     PS4="+$( tput cr && tput cuf 6 && printf "%s $reset" )"
 
     export PS4
-
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -199,7 +186,6 @@ main() {
 main
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Cleanup
 
 unset -f enable_color_support
