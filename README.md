@@ -46,7 +46,7 @@ Install
 - [ ] Auto-Sub (https://github.com/BenjV/autosub) :small_red_triangle:
 - [x] CouchPotato (https://couchpota.to)
   * [x] LaunchAgent
-    * [ ] WebApp Proxy
+  * [ ] WebApp Proxy
   * [ ] SabNZBD+ integration
   * [ ] Spotweb integration
 - [ ] NewzNAB
@@ -57,12 +57,15 @@ Install
   * [ ] Channel: TraktTV
 - [x] SABnzbd+
   * [x] LaunchAgent
+  * [ ] WebApp Proxy
   * [x] Folder creation
 - [x] SickBeard
   * [ ] LaunchAgent
+  * [ ] WebApp Proxy
   * [x] SABnzbd+ integration (text step-by-step, not (yet) automated)
   * [ ] Spotweb integration
 - [ ] Sonarr
+- [ ] WebApp Proxy
 - [ ] Spotweb :small_red_triangle:
   * [x] API enablement check
   * [ ] LaunchAgent: Periodic retrieval
