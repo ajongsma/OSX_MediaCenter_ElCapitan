@@ -35,7 +35,7 @@ Click										: Next
 
 
 -= ******** ******** ******** =-
-Config file will be written to: $HOME/Library/Application Support/SABnzbd
+Config file will be written to: $HOME/Library/Application Support/SABnzbd/sabnzbd.ini
 SABnzbd will restart and become available at: http://localhost:8080/sabnzbd/
 -= ******** ******** ******** =-
 
