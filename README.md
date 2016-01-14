@@ -54,7 +54,7 @@ Install
 - [ ] Plex Media Server
   * [ ] Channel: Custom app store
   * [x] Channel: HelloHue (https://github.com/ledge74/HelloHue)
-  * [ ] Channel: TraktTV
+  * [x] Channel: TraktTV
 - [x] SABnzbd+
   * [x] LaunchAgent
   * [ ] WebApp Proxy
