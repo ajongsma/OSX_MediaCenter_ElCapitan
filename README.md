@@ -46,6 +46,7 @@ Install
 - [ ] Auto-Sub (https://github.com/BenjV/autosub) :small_red_triangle:
 - [x] CouchPotato (https://couchpota.to)
   * [x] LaunchAgent
+    * [ ] WebApp Proxy
   * [ ] SabNZBD+ integration
   * [ ] Spotweb integration
 - [ ] NewzNAB
