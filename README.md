@@ -69,7 +69,7 @@ Install
 - [ ] Spotweb :small_red_triangle:
   * [x] API enablement check
   * [ ] LaunchAgent: Periodic retrieval
-  * [ ] SabNZBD+ integration
+  * [x] SabNZBD+ integration  (text step-by-step, not (yet) automated)
 - [ ] etc.
 
 
