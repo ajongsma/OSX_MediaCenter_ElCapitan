@@ -54,15 +54,16 @@ Install
   * [ ] Channel: Custom app store
   * [x] Channel: HelloHue (https://github.com/ledge74/HelloHue)
   * [ ] Channel: TraktTV
-- [x] SabNZBD+
+- [x] SABnzbd+
   * [x] LaunchAgent
   * [x] Folder creation
 - [x] SickBeard
   * [ ] LaunchAgent
+  * [x] SABnzbd+ integration (text step-by-step, not (yet) automated)
   * [ ] Spotweb integration
 - [ ] Sonarr
 - [ ] Spotweb :small_red_triangle:
-  * [x] API
+  * [x] API enablement check
   * [ ] LaunchAgent: Periodic retrieval
   * [ ] SabNZBD+ integration
 - [ ] etc.
