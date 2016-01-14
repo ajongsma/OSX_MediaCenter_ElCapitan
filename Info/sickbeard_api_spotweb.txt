@@ -1,0 +1,19 @@
+Open SabNZBD -> Config -> General
+API Key										: * write down
+
+Open SickBeard -> Config -> Search Providers
+-- Configure Custom Newznab Providers 
+Select Provider 							: Add new provider
+Provider Name								: Spotweb
+Site URL									: http://<hostname>/spotweb/ e.g. http://localhost/spotweb/
+API Key										: *** SABnzbd API key
+-------------------------------------------   --------
+Click										: Add
+-------------------------------------------   --------
+
+Provider Priorities							: Spotweb, Sick Beard Index, Womble's Index
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+*** Config is saved into $SICKBEARD_PATH/config.ini
