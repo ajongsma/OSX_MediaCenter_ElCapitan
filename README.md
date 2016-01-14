@@ -65,7 +65,7 @@ Install
   * [x] SABnzbd+ integration (text step-by-step, not (yet) automated)
   * [ ] Spotweb integration
 - [ ] Sonarr
-- [ ] WebApp Proxy
+  * [ ] WebApp Proxy
 - [x] Spotweb :small_red_triangle:
   * [x] API enablement check
   * [x] LaunchAgent: Periodic retrieval
