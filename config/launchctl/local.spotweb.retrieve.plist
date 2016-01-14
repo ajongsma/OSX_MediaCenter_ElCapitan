@@ -13,10 +13,6 @@
 		<string>/usr/bin/php</string>
 		<string>retrieve.php</string>
 	</array>
-	<key>StandardErrorPath</key>
-	<string>/var/log/spotweb/sync.stderr</string>
-	<key>StandardOutPath</key>
-	<string>/var/log/spotweb/sync.stdout</string>
 	<key>StartInterval</key>
 	<integer>3600</integer>
 	<key>WorkingDirectory</key>
