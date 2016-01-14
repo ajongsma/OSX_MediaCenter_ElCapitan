@@ -1,6 +1,5 @@
 Open SabNZBD -> Config -> General
 API Key										: * write down
-NZB Key										: * write down
 
 Open SickBeard -> Search Settings
 Search NZBs									: Enable

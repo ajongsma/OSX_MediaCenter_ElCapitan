@@ -1,0 +1,18 @@
+Open SabNZBD -> Config -> General
+API Key										: * write down
+NZB Key										: * write down
+
+d2a3266f97b8efe2f9c2b874e5937b61
+
+
+Open Spotweb -> Config -> Change Preferences
+-- NZB Handling
+What shall we do with NZB files				: Call SABnzbd through HTTP by Spotweb
+What shall we do with multiple NZB files	: Merge NZB files
+URL to SABnzbd								: ** http://<HOSTNAME>:$SABNZBD_PORT/ e.g. http://localhost:8080/
+SABnzbd API Key								: ** SABnzbd NZB Key
+-------------------------------------------   --------
+Click										: Change
+
+
+*** A download error should appear in the righ column of Spotweb. Click on the arror next to a desired TV show and check if the download appears in SABnzbd
