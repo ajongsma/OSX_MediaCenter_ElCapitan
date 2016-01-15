@@ -127,7 +127,7 @@ file_exists() {
         #echo "file EXISTS (1): $?"
         return $?
     else
-        echo "file NOT exists (2): $?"
+        #echo "file NOT exists (2): $?"
         return 1
     fi
     echo "file EXISTS : $?"
