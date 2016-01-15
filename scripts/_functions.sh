@@ -124,7 +124,7 @@ extract() {
 
 file_exists() {
     if [ -f "$1" ]; then
-        echo "file EXISTS (1): $?"
+        #echo "file EXISTS (1): $?"
         return $?
     else
         echo "file NOT exists (2): $?"
