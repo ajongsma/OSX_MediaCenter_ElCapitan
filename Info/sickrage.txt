@@ -1,0 +1,120 @@
+-= Sickbeard - Configuration =-
+## http://www.snelrennen.nl/synology/sickrage/configuratie-2.php
+
+
+-= General Configuration =-
+-- Misc
+Launch Browser								: Disable
+
+-- Updates
+Show root directories						: New -> /Users/<username>/Series/Media -> Ok
+Check the server every*						: 12
+-------------------------------------------   --------
+Click										: Save Changes
+
+-- Interface
+Timezone 									: Network
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+
+-= Search Settings =-
+-- Episode Search
+Check propers every 						: 4 hours
+Backlog search frequency					: 967
+Usenet retention 							: ** Check newsnet providers Days Binary Retention e.g. 2357
+Ignore Words 								: german,french,core2hd,swedish,reenc,MrLss
+-------------------------------------------   --------
+Click										: Save Changes
+
+-- NZB Search
+Search NZBs 								: Enable
+Send .nzb files to 							: Black Hole
+Black hole folder location					: /Users/<username>/Downloads
+-------------------------------------------   --------
+Click										: Save Changes
+
+-- Torrent Search
+Search torrents								: Disable
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+-- Search Providers
+Provider Priorities							: *Spotweb, *NZBPlanet, *OZNZB, Usenet-Crawler, *Usenet-Crawler1
+
+
+-= Subtitles =-
+-- Subtitle Search
+Search Subtitles							: Enable
+Subtitle language 							: Dutch
+Subtitles Multi-Language 					: Enable
+-------------------------------------------   --------
+Click										: Save Changes
+
+-- Subtitle Plugins
+Addic7ed									: Enable
+Opensubtitles								: Enable
+TVsubtitles									: Enable
+-------------------------------------------   --------
+Click										: Save Changes
+
+-- Plugins Settings
+Addic7ed User Name							: ** Addic7ed UserID 
+Addic7ed Password							: ** Addic7ed Password
+Opensubtitles User Name						: ** Opensubtitles UserID
+Opensubtitles Password						: ** Opensubtitles Password
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+-= Post Processing =-
+-- Post-Processing
+Enable										: Enable
+Post Processing Dir 						: /Users/<username>/Downloads/Usenet/Completed
+Processing Method 							: Move
+Auto Post-Processing frequency 				: 10 minutes
+Delete RAR contents							: Enable
+-------------------------------------------   --------
+Click										: Save Changes
+
+-- Episode Naming
+Name Pattern								: Custom
+Pattern										: Season %0S/%SN - S%0SE%0E - %QN - %SQN-%RG
+Multi-Episode Style 						: Extend (Limted, E-prefixed)
+Strip Show Year								: Enable
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+
+-= Home - Shows -> Add Shows =-
+** Choose applicable e.g. Add Existing Show
+
+Click										: New
+Browse 										: $HOME/Media/Series
+Click										: OK
+-------------------------------------------   --------
+Click										: Submit
+
+-- New Show - Step 1 =-
+** Change language in dropdown if needed, click Search and select applicable show
+Click										: Next
+
+-- New Show - Step 2 =-
+** Verify pre-chosen Destination folder
+Click										: Next
+
+-- New Show - Step 3 =-
+Status for previously aired episodes		: Skipped
+Status for all future episodes				: Wanted
+Preferred quality of episodes to Download 	: HD
+Click										: Save Defaults
+-------------------------------------------   --------
+Click										: Add Show
+
+***
+Continue with adding TV Shows
+***
+

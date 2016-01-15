@@ -1,4 +1,4 @@
-Spotweb Install Wizard
+-= Sickbeard =-
 
 -= Config - General =-
 -- Misc
