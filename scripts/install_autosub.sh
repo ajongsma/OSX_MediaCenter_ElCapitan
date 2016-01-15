@@ -33,22 +33,18 @@ main() {
     sudo chown -R `whoami`:staff $AUTOSUB_FOLDER
 
     ## Unstable version
-    git clone https://github.com/BenjV/autosub.git $AUTOSUB_FOLDER
+    #git clone https://github.com/BenjV/autosub.git $AUTOSUB_FOLDER
 
     ## Stable version
-    git clone https://github.com/clone1612/autosub-bootstrapbill.git $AUTOSUB_FOLDER    
+    git clone https://github.com/clone1612/autosub-bootstrapbill.git $AUTOSUB_FOLDER
     print_result $? 'Download Autosub'
 
-    cp ../config/autosub/config.properties $AUTOSUB_FOLDER/
-    #sudo ln -s $AUTOSUB_FOLDER /Library/Server/Web/Data/Sites/Default/spotweb
+    #cp ../config/autosub/config.properties $AUTOSUB_FOLDER/
   fi
 
-#cp ../config/autosub/config.properties $AUTOSUB_FOLDER/
-
 #  open http://localhost:8080
-  echo " --- press any key to continue ---"
-  read -n 1 -s
-exit
+#  echo " --- press any key to continue ---"
+#  read -n 1 -s
 
   print_result $? 'Spotweb'
 }
