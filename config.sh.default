@@ -40,7 +40,10 @@ AUTOSUB_FOLDER="/Users/Plex/Autosub"
 COUCHPOTATO_FOLDER="/Users/Plex/CouchPotato"
 
 ## Sickbeard
-SICKBEARD_FOLDER="/Users/Plex/Sickbeard"
+SICKBEARD_FOLDER="/Users/Plex/SickBeard"
+
+## SickRage
+SICKRAGE_FOLDER="/Users/Plex/SickRage"
 
 ## Spotweb
 SPOTWEB_FOLDER="/Users/Plex/Spotweb"
