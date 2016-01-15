@@ -43,7 +43,8 @@ Install
   * [x] Python LXML
 
 ###### Applications
-- [ ] Auto-Sub (https://github.com/BenjV/autosub) :small_red_triangle:
+- [x] Auto-Sub (https://github.com/BenjV/autosub) :small_red_triangle:
+  * [x] LaunchAgent
 - [x] CouchPotato (https://couchpota.to)
   * [x] LaunchAgent
   * [ ] WebApp Proxy
