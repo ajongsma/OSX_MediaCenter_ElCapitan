@@ -1,0 +1,38 @@
+-= Auto-Sub -> Configuration =-
+
+Series Folder								: ** The folder where the series are located e.g. /Users/<username>/Media/Series
+Download Dutch								: Enabled
+Notify Dutch								: Disabled
+Dutch Suffix								: nl
+Fallback to English							: enabled
+Clean up English							: enabled
+Download English							: diabled
+Notify English								: disabled
+English Suffix								: en
+Home table order							: Wanted, Downloaded
+WEB-DL										: Both
+
+-- Advanced Settings
+MinMatchScore								: Source, Releasegroup
+-------------------------------------------   --------
+Click										: Save Changes
+
+-- Websites
+Addic7ed									: Both
+Username 									: ** Adic7ed UserID
+Password									: ** Adic7ed Password
+-------------------------------------------   --------
+Click										: Test Addic7ed
+-------------------------------------------   --------
+Click										: Save Changes
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Source possibilities:
+# source_syn = {u'ahdtv'  : u'hdtv',
+#               u'dvd'    : u'dvdrip',
+#               u'bdrip'  : u'bluray',
+#               u'blu-ray': u'bluray',
+#               u'webdl'  : u'web-dl',
+#               u'web'    : u'web-dl',
+#               u'web-rip': u'webrip'}
