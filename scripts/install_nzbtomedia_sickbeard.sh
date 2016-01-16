@@ -21,7 +21,7 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
-  if [ "${NZBTOMEDIA_FOLDER}" == "" ] || [ "${SABNZBD_FOLDER}" == "" ]; then
+  if [ "${NZBTOMEDIA_FOLDER}" == "" ]; then
       echo "Error: Not all config setting have been found set, please check config.sh."
       exit 1
     fi
@@ -30,8 +30,8 @@ main() {
     print_error 'Error: Folder not detected - '$NZBTOMEDIA_FOLDER
   fi
 
-  if ! folder_exists $SABNZBD_FOLDER; then
-    print_error 'Error: Folder not detected - '$SABNZBD_FOLDER
+  if ! folder_exists '/Applications/SABnzbd.app/'; then
+    print_error 'Error: Application not detected - SABnzbd'
   fi
 
   if ! file_exists $NZBTOMEDIA_FOLDER/autoProcessTV/autoProcessMedia.cfg; then
