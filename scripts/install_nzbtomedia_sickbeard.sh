@@ -34,8 +34,8 @@ main() {
     print_error 'Error: Application not detected - SABnzbd'
   fi
 
-  if ! file_exists $NZBTOMEDIA_FOLDER/autoProcessTV/autoProcessMedia.cfg; then
-    print_error 'Error: File not detected - '$$NZBTOMEDIA_FOLDER/autoProcessTV/autoProcessMedia.cfg
+  if ! file_exists $NZBTOMEDIA_FOLDER'/autoProcessTV/autoProcessMedia.cfg'; then
+    print_error 'Error: File not detected - '$NZBTOMEDIA_FOLDER/autoProcessTV/autoProcessMedia.cfg
   fi
 
   
