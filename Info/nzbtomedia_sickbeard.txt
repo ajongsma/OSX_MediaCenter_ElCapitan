@@ -1,5 +1,7 @@
 -= autoProcessMedia.cfg =-
 ## https://github.com/SiCKRAGETV/sickrage-issues/wiki/NZBtoMedia
+## http://www.snelrennen.nl/synology/nzbget/configuratie-1.php
+
 
 
 *** Edit the file $NZBTOMEDIA_PATH/autoProcessMedia.cfg.

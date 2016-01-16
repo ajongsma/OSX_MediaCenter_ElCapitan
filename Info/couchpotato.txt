@@ -1,0 +1,41 @@
+-= CouchPotato =-
+## Default port is 5050 e.g. http://localhost:5050
+
+
+-= General =-
+-- General
+Username									: $COUCHPOTATO_UID
+Password									: $COUCHPOTATO_PW
+Launch Browser								: Disable
+
+-- Usenet Providers
+Binsearch									: Enable
+NZBClub										: Enable
+
+-- Rename downloaded movies
+Rename downloaded movies					: Enable
+
+From										: /Users/<username>/Downloads/Usenet/Completed/
+To 											: /Users/<username>/Media/Movies/
+Folder Naming								: <namethe> (<year>)
+File Naming									: <thename> (<year>) <quality> <source> <video>-<group>.<ext>
+Cleanup										: Enable
+-------------------------------------------   --------
+Click										: I'm ready to start the awesomeness
+
+
+-= Config -> Settings =-
+-- Searcher
+Quality Profile -> Best
+Search for 									: 1080p, 720p, BR-Rip, DVD-Rip
+keep searching 								: 7
+
+-- Display
+In Theaters									: Enable
+
+-- Manage
+Add your existing movie folders				: Enable
+Movie Folder 								: /Users/<username>/Media/Movies/
+Scan At Startup								: Disable
+Full Library Refresh						: 24
+
