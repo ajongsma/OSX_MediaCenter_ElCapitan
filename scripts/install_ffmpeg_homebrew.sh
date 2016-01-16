@@ -26,7 +26,7 @@ declare -a BREW_PACKAGES=(
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-## Install dependencies for ffmpeg: gettext, texi2html, yasm, x264, lame, libvo-aacenc, xvid, libpng, freetype, libogg, libvorbis, lua, libquvi, x265
+## Installing dependencies for ffmpeg: pkg-config, gettext, texi2html, yasm, x264, lame, libvo-aacenc, xvid, l
 
 main() {
 	if ! cmd_exists 'brew'; then
