@@ -26,7 +26,7 @@ declare -a BREW_PACKAGES=(
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-## Install dependencies for ffmpeg: gettext, texi2html, yasm, x264, lame, libvo-aacenc, xvid, libpng, freetype, libogg, libvorbis
+## Install dependencies for ffmpeg: gettext, texi2html, yasm, x264, lame, libvo-aacenc, xvid, libpng, freetype, libogg, libvorbis, lua, libquvi, x265
 
 main() {
 	if ! cmd_exists 'brew'; then
@@ -43,7 +43,8 @@ main() {
 
     if ! cmd_exists "$sourceFile"; then
       if [ "$sourceFile" == 'ffmpeg' ]; then
-        sourceFile='ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-frei0r --with-libass --with-libvo-aacenc --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-opus --with-rtmpdump --with-speex --with-theora --with-tools'
+        #sourceFile='ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-frei0r --with-libass --with-libvo-aacenc --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-opus --with-rtmpdump --with-speex --with-theora --with-tools'
+        sourceFile='ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265 --with-tools'
       fi  
       
       brew install $sourceFile
