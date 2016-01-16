@@ -28,14 +28,17 @@ main() {
 
   if ! folder_exists $NZBTOMEDIA_FOLDER; then
     print_error 'Error: Folder not detected - '$NZBTOMEDIA_FOLDER
+    exit 1
   fi
 
   if ! folder_exists '/Applications/SABnzbd.app/'; then
     print_error 'Error: Application not detected - SABnzbd'
+    exit 1
   fi
 
-  if ! file_exists $NZBTOMEDIA_FOLDER'/autoProcessTV/autoProcessMedia.cfg'; then
-    print_error 'Error: File not detected - '$NZBTOMEDIA_FOLDER/autoProcessTV/autoProcessMedia.cfg
+  if ! file_exists $NZBTOMEDIA_FOLDER'/autoProcessMedia.cfg'; then
+    cp $NZBTOMEDIA_FOLDER'/autoProcessMedia.cfg.spec' $NZBTOMEDIA_FOLDER'/autoProcessMedia.cfg'
+
   fi
 
   
