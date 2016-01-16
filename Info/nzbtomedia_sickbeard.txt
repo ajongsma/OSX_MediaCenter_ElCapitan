@@ -1,0 +1,45 @@
+-= autoProcessMedia.cfg =-
+## https://github.com/SiCKRAGETV/sickrage-issues/wiki/NZBtoMedia
+
+
+*** Edit the file $NZBTOMEDIA_PATH/autoProcessMedia.cfg.
+*** Go to the [SickBeard] section and add/change the following settings. :
+
+[SickBeard]
+enabled 									= 1
+username 									= ** If enabled, $SICKBEARD_UID
+password 									= ** If enabled, $SICKBEARD_PW
+
+
+[Nzb]
+clientAgent 								= sabnzbd
+sabnzbd_host 								= http://localhost
+sabnzbd_apikey								= ** Add the API key of sabnzbd
+default_downloadDirectory 					= "/Users/<username>/Downloads/Usenet Completed"
+-------------------------------------------   --------
+											: Save Changes
+
+
+
+*** Open SABnzbd -> Config
+-- Folders -> User Folders -> Post-Processing Scripts Folder
+Post-Processing Scripts Folder 				: $NZBMEDIA_FOLDER e.g. /Users/Plex/NzbToMedia
+-------------------------------------------   --------
+											: Save Changes
+
+-- Categories -> TV
+Script 										: nzbToSickBeard.py
+-------------------------------------------   --------
+											: Save Changes
+
+-- Switches
+Post-Process Only Verified Jobs 			: Disable
+Script 										: nzbToSickBeard.py
+-------------------------------------------   --------
+											: Save Changes
+
+-- Special
+empty_postproc (off)						: Disable
+-------------------------------------------   --------
+											: Save Changes
+
