@@ -39,6 +39,9 @@ AUTOSUB_FOLDER="/Users/Plex/Autosub"
 ## CouchPotato
 COUCHPOTATO_FOLDER="/Users/Plex/CouchPotato"
 
+## NzbToMedia
+NZBTOMEDIA_FOLDER="/Users/Plex/NzbToMedia"
+
 ## Sickbeard
 SICKBEARD_FOLDER="/Users/Plex/SickBeard"
 
