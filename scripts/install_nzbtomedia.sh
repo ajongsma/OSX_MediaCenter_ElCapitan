@@ -31,7 +31,7 @@ main() {
     sudo mkdir -p $NZBTOMEDIA_FOLDER
     sudo chown -R `whoami`:staff $NZBTOMEDIA_FOLDER
 
-    git clone git://github.com/midgetspy/Sick-Beard.git $NZBTOMEDIA_FOLDER
+    git clone https://github.com/clinton-hall/nzbToMedia.git $NZBTOMEDIA_FOLDER
     print_result $? 'Download NzbToMedia'
   fi
 
