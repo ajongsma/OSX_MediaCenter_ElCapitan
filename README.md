@@ -52,7 +52,7 @@ Install
   * [ ] SabNZBD+ integration
   * [ ] Spotweb integration
 - [ ] NewzNAB
-- [ ] NzbToMedia
+- [x] NzbToMedia
 - [ ] Plex Home Theater
 - [ ] Plex Media Server
   * [ ] Channel: Custom app store
