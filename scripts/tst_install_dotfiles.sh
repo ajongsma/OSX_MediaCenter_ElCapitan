@@ -56,7 +56,7 @@ main() {
       else
           ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
           if answer_is_yes; then
-              cp -F -rf $sourceFile $targetFile
+              cp -rf $sourceFile $targetFile
           else
               print_error "$targetFile → $sourceFile"
           fi
