@@ -133,6 +133,7 @@ Usefull links:
 
 ###### Other
 - https://github.com/spotweb/spotweb/wiki/Performance-tips
+- https://github.com/bstascavage/plexReport or https://github.com/jakewaldron/PlexEmail
 
 ###### Sed
 - sudo sed -i "s/^;date.timezone =.*/date.timezone = Europe\/Amsterdam/" /etc/php5/*/php.ini
