@@ -47,10 +47,6 @@ main() {
       sourceFile="$(cd .. && pwd)/$i"
       targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
-      echo  "--------------------"
-      echo "sourceFile : " $sourceFile
-      echo "targetFile : " $targetFile
-      echo  "--------------------"
       if [ ! -e "$targetFile" ]; then
           cp $sourceFile $targetFile
       else
