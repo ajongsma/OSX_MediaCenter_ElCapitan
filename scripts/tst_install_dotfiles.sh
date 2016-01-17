@@ -19,26 +19,17 @@ else
   exit 1
 fi
 
-if [ -d dotfiles ]; then
-  DOTFILES_SOURCE="."
-elif [ -d ../dotfiles ]; then
-  DOTFILES_SOURCE="../"
-else
-  echo "Dotfiles folder not found"
-  exit 1
-fi
-
 declare -a FILES_TO_SYMLINK=(
-    $DOTFILES_SOURCE'dotfiles/bash_aliases'
-    $DOTFILES_SOURCE'dotfiles/bash_autocomplete'
-    $DOTFILES_SOURCE'dotfiles/bash_colors'
-    $DOTFILES_SOURCE'dotfiles/bash_exports'
-    $DOTFILES_SOURCE'dotfiles/bash_functions'
-    $DOTFILES_SOURCE'dotfiles/bash_logout'
-    $DOTFILES_SOURCE'dotfiles/bash_options'
-    $DOTFILES_SOURCE'dotfiles/bash_profile'
-    $DOTFILES_SOURCE'dotfiles/bash_prompt'
-    $DOTFILES_SOURCE'dotfiles/bashrc'
+    'dotfiles/bash_aliases'
+    'dotfiles/bash_autocomplete'
+    'dotfiles/bash_colors'
+    'dotfiles/bash_exports'
+    'dotfiles/bash_functions'
+    'dotfiles/bash_logout'
+    'dotfiles/bash_options'
+    'dotfiles/bash_profile'
+    'dotfiles/bash_prompt'
+    'dotfiles/bashrc'
 #    'shell/curlrc'
 #    'shell/inputrc'
 #    'dotfiles/screenrc'
