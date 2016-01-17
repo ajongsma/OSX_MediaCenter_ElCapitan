@@ -45,7 +45,7 @@ main() {
 
   for i in ${FILES_TO_SYMLINK[@]}; do
       sourceFile="$(cd .. && pwd)/$i"
-      targetFile="$HOME/testing/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+      targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
       echo  "--------------------"
       echo "sourceFile : " $sourceFile
