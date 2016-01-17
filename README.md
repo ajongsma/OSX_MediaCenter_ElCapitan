@@ -37,6 +37,7 @@ Install
   * [ ] bash_profile
   * [ ] bash_prompt
 - [x] HomeBrew
+  * [x] ffmpeg
 - [x] MySQL
 - [x] OS X Server
 - [x] Python PIP (Package Manager)
@@ -51,6 +52,7 @@ Install
   * [ ] SabNZBD+ integration
   * [ ] Spotweb integration
 - [ ] NewzNAB
+- [ ] NzbToMedia
 - [ ] Plex Home Theater
 - [ ] Plex Media Server
   * [ ] Channel: Custom app store
@@ -60,6 +62,7 @@ Install
   * [x] LaunchAgent
   * [ ] WebApp Proxy
   * [x] Folder creation
+  * [x] NzbToMedia (SickBeard)
 - [x] SickBeard
   * [x] LaunchAgent
   * [ ] WebApp Proxy
