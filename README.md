@@ -102,6 +102,10 @@ Usefull links:
 - http://jason.pureconcepts.net/2014/11/configure-apache-virtualhost-mac-os-x/
 - https://clickontyler.com/support/a/41/osx-server-app-virtualhostx/
 - http://matt.coneybeare.me/how-to-map-plex-media-server-to-your-home-domain/
+- https://discussions.apple.com/thread/3566643?start=0&tstart=0
+- http://www.themacosxserveradmin.com/2011_09_01_archive.html
+- http://gathering.tweakers.net/forum/list_messages/1641228
+- http://smashingfiasco.com/setting-up-aspnetmono-on-mac-os-server.html
 
 ###### Dot files
 - https://github.com/alrra/dotfiles
