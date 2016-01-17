@@ -52,23 +52,16 @@ main() {
       echo "targetFile : " $targetFile
       echo  "--------------------"
       if [ ! -e "$targetFile" ]; then
-          execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-      elif [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
-          print_success "$targetFile → $sourceFile"
+          cp $sourceFile $targetFile
       else
           ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
           if answer_is_yes; then
-              rm -rf "$targetFile"
-              execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+              cp -F -rf $sourceFile $targetFile
           else
               print_error "$targetFile → $sourceFile"
           fi
       fi
   done
-
-
-
-
 
   print_result $? 'Dotfiles'
 }
