@@ -4,6 +4,10 @@
 # api_key
 # nzb_key
 
+## Notes
+#  http://serverfault.com/questions/419533/edit-a-file-via-bash-script
+
+
 ## Working
 # sed -n -e '/^api_key/ s/.*\= *//p' sabnzbd.ini
 
