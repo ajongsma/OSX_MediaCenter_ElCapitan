@@ -48,8 +48,8 @@ main() {
       targetFile="$HOME/testing/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
       echo  "--------------------"
-      echo sourceFile
-      echo targetFile
+      echo "sourceFile : " $sourceFile
+      echo "targetFile : " $targetFile
       echo  "--------------------"
       if [ ! -e "$targetFile" ]; then
           execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
