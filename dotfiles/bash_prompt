@@ -3,7 +3,7 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 enable_color_support() {
-    declare DOTFILES_DIR_PATH="$(dirname $(dirname $(readlink $BASH_SOURCE)))"
+    #declare DOTFILES_DIR_PATH="$(dirname $(dirname $(readlink $BASH_SOURCE)))"
 
     if [[ $COLORTERM == gnome-* && $TERM == xterm ]] && infocmp gnome-256color &> /dev/null; then
         export TERM='gnome-256color'
