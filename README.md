@@ -106,6 +106,7 @@ Usefull links:
 - http://www.themacosxserveradmin.com/2011_09_01_archive.html
 - http://gathering.tweakers.net/forum/list_messages/1641228
 - http://smashingfiasco.com/setting-up-aspnetmono-on-mac-os-server.html
+- http://serverfault.com/questions/441722/apache-2-2-on-mountain-lion-ignoring-proxypass-and-sending-request-to-documentro
 
 ###### Dot files
 - https://github.com/alrra/dotfiles
