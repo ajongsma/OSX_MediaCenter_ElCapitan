@@ -54,7 +54,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # `cat` with beautiful colors
-alias c='pygmentize -O style=monokai -f console256 -g'
+alias cc='pygmentize -O style=monokai -f console256 -g'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
@@ -70,7 +70,7 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+alias cn="tr -d '\n' | pbcopy"
 
 # Hide/Show hidden files in Finder
 alias hide-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
