@@ -1,0 +1,12 @@
+Open Spotweb -> Config -> Users and Group Management -> Click desired Username
+API Key										: * write down
+
+Open CouchPotato -> Config -> Settings
+-- Searchers - Usenet Providers - Add new entry
+Newznab 									: Enable
+Host										: http://<hostname>/spotweb/ e.g. http://localhost/spotweb/
+API Key										: *** SABnzbd API key
+Extra score									: 10
+
+
+*** Click a desired movie, click Refresh. If movie is available and is found on created search provider, the column provider of available releases should show the created host
