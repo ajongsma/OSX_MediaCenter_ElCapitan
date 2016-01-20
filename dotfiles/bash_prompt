@@ -129,7 +129,8 @@ set_prompts() {
     # ------------------------------------------------------------------
     symbol="λ "
 
-    PS1="\[${bold}${white}\]$symbol"
+    PS1="\[\033]0;\w\007\]";
+    PS1+="\[${bold}${white}\]$symbol"                   # newline
     PS1+="\[${userStyle}\]\u \[$white\]"                # username
     PS1+="at \[$hostStyle\]\h \[$white\]"               # host
     PS1+="in \[$green\]\${PWD/#\$HOME/~}\[$white\]"     # Working directory
@@ -192,7 +193,7 @@ set_prompts() {
         '+ '
     
         # Make the following extra information stand out less.
-        "${MAGENTA}${BOLD}"
+        "${magenta}${bold}"
     
         # Show the name of the current shell function, if any.
         '${FUNCNAME}'
@@ -202,7 +203,7 @@ set_prompts() {
         # and the file/function.
         '${BASH_SOURCE:+${FUNCNAME:+@}}'
     
-        "${ORANGE}"
+        "${orange}"
     
         # Note that LINENO is reset from 1 inside a function body. Sometimes,
         # $LINENO is a negative number. I could not find any reference to this in
@@ -219,7 +220,7 @@ set_prompts() {
         $'\t'
     
         # Reset the colour and style.
-        "${RESET}"
+        "${reset}"
     )
     printf -v PS4 '%s' "${ps4_parts[@]}"
     export PS4
