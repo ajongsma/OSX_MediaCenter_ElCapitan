@@ -9,7 +9,6 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
 # Easier navigation
 alias ~="cd ~"                                                      # ~:            Go Home
 alias cd..='cd ../'                                                 # Go back 1 directory level (for fast typers)
@@ -30,7 +29,7 @@ alias l="ls -lF ${colorflag}"                                       # List all f
 alias la="ls -laF ${colorflag}"                                     # List all files colorized in long format, including dot files
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"           # List only directories
 alias ls="command ls ${colorflag}"                                  # Always use color output for `ls
-#export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 
 alias cp='cp -iv'                                                   # Preferred 'cp' implementation
 alias mv='mv -iv'                                                   # Preferred 'mv' implementation
@@ -73,9 +72,11 @@ alias topForever='top -l 9999999 -s 10 -o cpu'
 #   ------------------------------------------------------------
 alias ttop="top -R -F -s 10 -o rsize"
 
-#   my_ps: List processes owned by my user:
-#   ------------------------------------------------------------
-my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
+alias numFiles='echo $(ls -1 | wc -l)'                              # numFiles:     Count of non-hidden files in current dir
+
+alias make1mb='mkfile 1m ./1MB.dat'                                 # make1mb:      Creates a file of 1mb size (all zeros)
+alias make5mb='mkfile 5m ./5MB.dat'                                 # make5mb:      Creates a file of 5mb size (all zeros)
+alias make10mb='mkfile 10m ./10MB.dat'                              # make10mb:     Creates a file of 10mb size (all zeros)
 
 # `cat` with beautiful colors
 alias cc='pygmentize -O style=monokai -f console256 -g'
@@ -124,3 +125,5 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+#export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
