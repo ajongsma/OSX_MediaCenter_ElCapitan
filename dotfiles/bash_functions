@@ -2,71 +2,13 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Always list directory contents upon 'cd'
+# cd: Always list directory contents upon 'cd'
 cd() { builtin cd "$@"; ll; }
 
 # cdr: Change working directory to the top-most Finder window location
 cdf() { cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"; }
 
-# mcd:          Makes new Dir and jumps inside
-mcd () { mkdir -p "$1" && cd "$1"; }
-
-# trash:        Moves a file to the MacOS trash
-trash () { command mv "$@" ~/.Trash ; }
-
-# ql:           Opens any file in MacOS Quicklook Preview
-ql () { qlmanage -p "$*" >& /dev/null; }
-
-# Find file under the current directory
-ff () { /usr/bin/find . -name "$@" ; }
-
-# Find file whose name starts with a given string
-ffs () { /usr/bin/find . -name "$@"'*' ; }     
-
-# Find file whose name ends with a given string
-ffe () { /usr/bin/find . -name '*'"$@" ; }
-
-# spotlight: Search for a file using MacOS Spotlight's metadata
-spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
-
-hist() { history | grep $1; }                                       # Find a command in the history, e.g hist man
-
-# my_ps: List processes owned by my user:
-my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
-
-# psg: grep for a process
-psg () {
-  FIRST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
-  REST=`echo $1 | sed -e 's/^.\(.*\)/\1/'`
-  ps aux | grep "[$FIRST]$REST"
-}
-
-# findPid: find out the pid of a specified process
-findPid () { lsof -t -c "$@" ; }
-
-# mans:   Search manpage given in agument '1' for term given in argument '2' (case insensitive) displays paginated result with colored search terms and two lines surrounding each hit.
-mans () {
-    man $1 | grep -iC2 --color=always $2 | less
-}
-
-# showa: to remind yourself of an alias (given some part of it)
-showa () { /usr/bin/grep --color=always -i -a1 $@ ~/Library/init/bash/aliases.bash | grep -v '^\s*$' | less -FSRXc ; }
-
-# ii:  display useful host related informaton
-ii() {
-    echo -e "$(tput setaf 5)You are logged on:$(tput sgr0) " ; echo $(hostname | sed -e 's/\..*//')
-    echo -e "$(tput setaf 5)Additionnal information:$(tput sgr0) " ; uname -a
-    echo -e "$(tput setaf 5)Users logged on:$(tput sgr0) " ; w -h
-    echo -e "$(tput setaf 5)Current date :$(tput sgr0) " ; date
-    echo -e "$(tput setaf 5)Machine stats :$(tput sgr0) " ; uptime
-    echo -e "$(tput setaf 5)Current network location :$(tput sgr0) " ; scselect
-    echo -e "$(tput setaf 5)Public facing IP Address :$(tput sgr0) " ; myip ; echo ""
-    echo -e "$(tput setaf 5)Geographical information :$(tput sgr0) " ; curl ipinfo.io
-    #echo -e "\n${RED}DNS Configuration:$PS_CLEAR " ; scutil --dns
-    echo
-}
-
-# extract:  Extract most know archives with one command
+# extract: Extract most know archives with one command
 extract () {
     if [ -f $1 ] ; then
       case $1 in
@@ -88,5 +30,64 @@ extract () {
      fi
 }
 
-#   httpDebug:  Download a web page and show info on what took time
+# ff: Find file under the current directory
+ff () { /usr/bin/find . -name "$@" ; }
+
+# ffs: Find file whose name starts with a given string
+ffs () { /usr/bin/find . -name "$@"'*' ; }     
+
+# ffe: Find file whose name ends with a given string
+ffe () { /usr/bin/find . -name '*'"$@" ; }
+
+# findPid: find out the pid of a specified process
+findPid () { lsof -t -c "$@" ; }
+
+# hist: Find a command in the history, e.g hist man
+hist() { history | grep $1; }
+
+# httpDebug: Download a web page and show info on what took time
 httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
+
+# mcd: Makes new Dir and jumps inside
+mcd () { mkdir -p "$1" && cd "$1"; }
+
+# my_ps: List processes owned by my user
+my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
+
+# psg: grep for a process
+psg () {
+  FIRST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
+  REST=`echo $1 | sed -e 's/^.\(.*\)/\1/'`
+  ps aux | grep "[$FIRST]$REST"
+}
+
+# ql: Opens any file in MacOS Quicklook Preview
+ql () { qlmanage -p "$*" >& /dev/null; }
+
+# showa: to remind yourself of an alias (given some part of it)
+showa () { /usr/bin/grep --color=always -i -a1 $@ ~/Library/init/bash/aliases.bash | grep -v '^\s*$' | less -FSRXc ; }
+
+# spotlight: Search for a file using MacOS Spotlight's metadata
+spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
+
+# trash: Moves a file to the MacOS trash
+trash () { command mv "$@" ~/.Trash ; }
+
+# mans: Search manpage given in agument '1' for term given in argument '2' (case insensitive) displays paginated result with colored search terms and two lines surrounding each hit.
+mans () {
+    man $1 | grep -iC2 --color=always $2 | less
+}
+
+# ii: display useful host related informaton
+ii() {
+    echo -e "$(tput setaf 5)You are logged on:$(tput sgr0) " ; echo $(hostname | sed -e 's/\..*//')
+    echo -e "$(tput setaf 5)Additionnal information:$(tput sgr0) " ; uname -a
+    echo -e "$(tput setaf 5)Users logged on:$(tput sgr0) " ; w -h
+    echo -e "$(tput setaf 5)Current date :$(tput sgr0) " ; date
+    echo -e "$(tput setaf 5)Machine stats :$(tput sgr0) " ; uptime
+    echo -e "$(tput setaf 5)Current network location :$(tput sgr0) " ; scselect
+    echo -e "$(tput setaf 5)Public facing IP Address :$(tput sgr0) " ; myip ; echo ""
+    echo -e "$(tput setaf 5)Geographical information :$(tput sgr0) " ; curl ipinfo.io
+    #echo -e "\n${RED}DNS Configuration:$PS_CLEAR " ; scutil --dns
+    echo
+}
