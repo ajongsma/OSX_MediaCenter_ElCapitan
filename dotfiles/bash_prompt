@@ -111,7 +111,7 @@ set_prompts() {
     if [[ "${USER}" == "root" ]]; then
     	userStyle="${red}";
     else
-    	userStyle="${magenta}";
+    	userStyle="${orange}";
     fi;
     
     # Highlight the hostname when connected via SSH.
