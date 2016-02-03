@@ -35,7 +35,7 @@ main() {
     print_result $? 'Download NzbToMedia'
   fi
 
-  sudo ln -sf /usr/bin/python2.7 /usr/local/bin/python2
+  ln -s /usr/bin/python2.7 /usr/local/bin/python2
 
   print_result $? 'NzbToMedia'
 }
