@@ -37,10 +37,10 @@ main() {
     sudo mkdir -p $PLEX_PMS_WEBTOOLS
     sudo chown -R `whoami`:staff $PLEX_PMS_WEBTOOLS
 
-    git clone https://github.com/dagalufh/WebTools.bundle.git $PLEX_PMS_WEBTOOLS
+    git clone https://github.com/dagalufh/WebTools.bundle.git $PLEX_PMS_WEBTOOLS/WebTools.bundle
     print_result $? 'Download PMS channel WebTools'
 
-    ln -s $PLEX_PMS_WEBTOOLS/Trakttv.bundle $HOME/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/WebTools.bundle
+    ln -s $PLEX_PMS_WEBTOOLS/WebTools.bundle $HOME/Library/Application\ Support/Plex\ Media\ Server/Plug-ins/WebTools.bundle
   fi
 
   print_result $? 'Plex PMS - WebTools'
