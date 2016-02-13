@@ -35,11 +35,6 @@ main() {
       exit 1
     fi
 
-    if ! cmd_exists 'mono'; then
-      print_error 'Mono required'
-      exit 1
-    fi
-
     sudo mkdir -p $SONARR_FOLDER
     sudo chown -R `whoami`:staff $SONARR_FOLDER
 
