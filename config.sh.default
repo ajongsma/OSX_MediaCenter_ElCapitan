@@ -49,6 +49,9 @@ SICKBEARD_FOLDER="/Users/Plex/SickBeard"
 ## SickRage
 SICKRAGE_FOLDER="/Users/Plex/SickRage"
 
+## Sonarr
+SONARR_FOLDER="/Users/Plex/Sonarr"
+
 ## Spotweb
 SPOTWEB_FOLDER="/Users/Plex/Spotweb"
 SPOTWEB_MYSQL_DB="spotweb"
