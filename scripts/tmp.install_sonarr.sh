@@ -29,6 +29,17 @@ main() {
 
   # Let's do it
   if ! folder_exists $SONARR_FOLDER; then
+
+    if ! cmd_exists 'brew'; then
+      print_error 'Homebrew required'
+      exit 1
+    fi
+
+    if ! cmd_exists 'mono'; then
+      print_error 'Mono required'
+      exit 1
+    fi
+
     sudo mkdir -p $SONARR_FOLDER
     sudo chown -R `whoami`:staff $SONARR_FOLDER
 
@@ -39,6 +50,7 @@ main() {
     #cp ../config/sonarr/config.properties $SONARR_FOLDER/
   fi
 
+#  mono --debug ./opt/NzbDrone/NzbDrone.exe
 #  open http://localhost:8989
 #  echo " --- press any key to continue ---"
 #  read -n 1 -s
