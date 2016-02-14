@@ -149,6 +149,15 @@ Usefull links:
 - sudo sed -i 's/key-buffer   /key-buffer-size /' /etc/mysql/my.cnf
 - sed -i '/bind-address/d' /etc/mysql/my.cnf
 
+###### Spotweb
+Remove NL Subs from QoQ Series:
+- UPDATE spots SET title= REPLACE (title, ' NLSubs ', ' ') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
+Remove (2015) from QoQ Series:
+- UPDATE spots SET title= REPLACE (title, '(2015)', '') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
+Remove (2016) from QoQ Series:
+- UPDATE spots SET title= REPLACE (title, '(2016)', '') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
+
+
 ###### Food for Thought
 - http://stackoverflow.com/questions/26493762/yosemite-el-capitan-php-gd-mcrypt-installation
 - http://www.michaelbagnall.com/blogs/php-gd-fixing-your-php-server-mac-os-x-without-homebrewmacports
