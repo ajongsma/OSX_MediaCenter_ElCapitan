@@ -1,0 +1,76 @@
+Sonarr Quick-Start Wizard
+http://localhost:8989
+
+-= Media Management =-
+Advanced Settings							: Shown
+
+-= Media Management - Episode Naming =-
+Rename Episodes								: Yes
+Standard Episode Format						: {Series Title} - S{season:00}E{episode:00} - {Quality Full} {MediaInfo Simple}-{Release Group}
+Daily Episode Format						: {Series Title} - {Air-Date} - {Quality Full} {MediaInfo Simple}-{Release Group}
+Multi-Episode Style							: Scene
+
+-= Media Management - Folders =-
+Create empty series Folders 				: Yes
+
+-= Media Management - File Management =-
+Ignore Deleted Episodes 					: Yes
+-------------------------------------------   --------
+Click										: Save
+
+
+-= Profiles - Profiles =-
+* Add 										-> HD (NL) - All
+Language									: Dutch
+Quality										: HDTV-1080p, WEBDL-1080p, Bluray-1080p, HDTV-720p, WEBDL-720p, Bluray-720p
+Cutoff										: HDTV-1080p
+-------------------------------------------   --------
+Click										: Save
+
+-= Profiles - Delay Profiles =-
+Protocol									: Only Usenet
+Usenet Delay								: 0
+-------------------------------------------   --------
+Click										: Save
+
+-------------------------------------------   --------
+Click										: Save
+
+
+-= Indexers - Indexers =-
+* Add 										: Newznab
+Name										: Spotweb
+URL											: <spotweb address> e.g. http://localhost/spotweb
+API Key										: <spotweb API key>
+-------------------------------------------   --------
+Click										: Test
+-------------------------------------------   --------
+Click										: Save
+
+
+-= Download Clients - Download Clients =-
+* Add 										: SABnzbd
+Name										: SABnzbd
+Host										: localhost
+Port 										: 8080
+API key 									: <sabnzbd api key>
+Category									: tv-sonarr
+-------------------------------------------   --------
+Click										: Test
+-------------------------------------------   --------
+Click										: Save
+
+## SABnzbd - Disable						: Check before download (settings -> Switches -> Queue)
+## SABnzbd - Category						: tv-sonarr, Default, Default, nzbToNzbDrone
+
+
+-= General - Startup =-
+Open browser on start 						: No
+-------------------------------------------   --------
+Click										: Save
+
+
+-= UI - Calendar =-
+First day of Week							: Monday
+-------------------------------------------   --------
+Click										: Save
