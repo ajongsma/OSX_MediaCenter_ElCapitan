@@ -152,8 +152,10 @@ Usefull links:
 ###### Spotweb
 ####### Remove NL Subs from QoQ Series:
 - UPDATE spots SET title= REPLACE (title, ' NLSubs ', ' ') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
+
 ####### Remove (2015) from QoQ Series:
 - UPDATE spots SET title= REPLACE (title, '(2015)', '') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
+
 ####### Remove (2016) from QoQ Series:
 - UPDATE spots SET title= REPLACE (title, '(2016)', '') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
 
