@@ -194,11 +194,156 @@ function compareTitles($string1, $string2)
     similar_text($string1, $string2, $percentage);
 
     return $percentage;
-}
 
 function setSpotRating($con, $rating, $id)
 {
     $updateresult = mysqli_query($con, "UPDATE spots SET spotrating = '".$rating."' WHERE id = ".$id);
 }
+
+
+}
+
+//// New - http://pastebin.com/yfB1GiJf
+// $result = get_show_name(rid_extension($file));
+// $tvdb_sseries_info = get_tvdb_seriesinfo($cleanshowname);
+//    if ($tvdb_series_info === false) {
+//            return array('status' => '1', 'output' => $output);
+//    }
+//$output .= "TheTVDB Series Name: " . $tvdb_series_info['name'] . "\n";
+//$seriesName = $tvdb_series_info['name'];
+//    $output .= "TheTVDB Series ID: " . $tvdb_series_info['id'] . "\n";
+//    $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
+//    if ($tvdb_episode_info === false) {
+//            return array('status' => '2', 'output' => $output);
+//    }
+//    $output .= "TheTVDB Series Season: " . $tvdb_episode_info['season'] . "\n";
+//    $output .= "TheTVDB Series Episode: " . $tvdb_episode_info['episode'] . "\n";
+//    $new_filename = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
+                
+function gen_proper_filename($input, $name, $episode, $season) {
+        $delimiter = '.';
+        $extension = get_extension($input);
+        if ($episode > 99) {
+                $string = 'S' . str_pad($season, 2, "0", STR_PAD_LEFT) . 'E' . str_pad($episode, 3, "0", STR_PAD_LEFT);
+        } else {
+                $string = 'S' . str_pad($season, 2, "0", STR_PAD_LEFT) . 'E' . str_pad($episode, 2, "0", STR_PAD_LEFT);
+        }
+  //[TheTVDB Series Name].[season episode].[extension]
+        $output = $name . $delimiter . $string . $extension;
+        return $output;
+}
+ 
+function get_tvdb_seriesinfo($input) {
+        $thetvdb = "http://www.thetvdb.com/";
+        $result = file_get_contents($thetvdb . 'api/GetSeries.php?seriesname='.urlencode($input));
+        $postemp1 = strpos($result, "<seriesid>") + strlen("<seriesid>");
+        $postemp2 = strpos($result, "<", $postemp1);
+        $seriesid = substr($result, $postemp1, $postemp2 - $postemp1);
+        if (is_numeric($seriesid) === false) {
+                return false;
+        }
+        $postemp1 = strpos($result, "<SeriesName>") + strlen("<SeriesName>");
+        $postemp2 = strpos($result, "<", $postemp1);
+        $seriesname = substr($result, $postemp1, $postemp2 - $postemp1);
+        $tvdb = array('id' => $seriesid, 'name' => $seriesname);
+        return $tvdb;
+}
+ 
+function get_tvdb_episodeinfo($seriesid, $episode, $season) {
+        if (empty($season)) {
+                $thetvdb = "http://www.thetvdb.com/";
+                $result = file_get_contents($thetvdb . 'api/F0A9519B01D1C096/series/'.$seriesid.'/absolute/'.$episode);
+                if ($result === false) {
+                        return false;
+                }
+                $postemp1 = strpos($result, "<EpisodeNumber>") + strlen("<EpisodeNumber>");
+                $postemp2 = strpos($result, "<", $postemp1);
+                $episodenumber = substr($result, $postemp1, $postemp2 - $postemp1);
+                $postemp1 = strpos($result, "<SeasonNumber>") + strlen("<SeasonNumber>");
+                $postemp2 = strpos($result, "<", $postemp1);
+                $episodeseason = substr($result, $postemp1, $postemp2 - $postemp1);
+                $tvdb = array('episode' => $episodenumber, 'season' => $episodeseason);
+        } else {
+                $tvdb = array('episode' => $episode, 'season' => $season);
+        }
+        return $tvdb;
+}
+ 
+function get_show_name($input) {
+        $pattern = '/' . '\[[^]]+\]|\([^]]+\)' . '/i';
+        $result = preg_replace($pattern,"",$input);
+        $result = str_replace("-", " ",$result);
+        $result = str_replace("_", " ",$result);
+        $result = str_replace(".", " ",$result);
+        // remove double spaces in the middle
+        while (sizeof ($array=explode ("  ",$result)) != 1)
+        {
+                 $result = implode (" ",$array);
+        }
+        return trim($result);
+}
+ 
+function rid_extension($thefile) {
+        if (strpos($thefile,'.') === false) {
+                return $thefile;
+        } else {
+                return substr($thefile, 0, strrpos($thefile,'.'));
+        }
+}
+ 
+function get_extension($thefile) {
+        return substr($thefile, strrpos($thefile,'.'));
+}
+ 
+function get_episode_number($input) {
+        if (preg_match('/' . '(E|e)([0-9]+)' . '/', $input, $episodenumber) > 0) {
+                $episodenumber = array('del' => $episodenumber[0], 'res' => $episodenumber[2]);
+                return $episodenumber;
+        } else {
+                preg_match_all('/' . '[0-9]+' . '/', $input, $matches);
+                //Kijk voor alle episodes
+                $matches = $matches[0];
+                for ($i=0; $i < count($matches); $i++) {
+                        $lastnum = $matches[$i];
+                }
+                $lastnum = array('del' => $lastnum, 'res' => $lastnum);
+                return $lastnum;
+        }
+}
+ 
+function get_season_number($input) {
+        $pattern = '/' . '(S|s)([0-9]+)' . '/';
+        if (preg_match($pattern, $input, $match) > 0) {
+                $match = array('del' => $match[0], 'res' => $match[2]);
+                return $match;
+        } else {
+                return false;
+        }
+}
+ 
+function rec_listFiles( $from = '.')
+{
+    if(! is_dir($from))
+        return false;
+   
+    $files = array();
+    if( $dh = opendir($from))
+    {
+        while( false !== ($file = readdir($dh)))
+        {
+            // Skip '.' and '..'
+            if( $file == '.' || $file == '..')
+                continue;
+            $path = $from . '/' . $file;
+            if( is_dir($path) )
+                $files=array_merge($files,rec_listFiles($path));
+            else
+                $files[] = $path;
+        }
+        closedir($dh);
+    }
+    return $files;
+}
+
 
 ?>
