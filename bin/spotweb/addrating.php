@@ -165,6 +165,7 @@ else
 function doLog($message)
 {
     global $quiet;
+    global $timestamp
     
     if(!$quiet)
     {
