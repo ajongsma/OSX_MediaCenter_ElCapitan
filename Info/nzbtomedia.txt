@@ -1,0 +1,7 @@
+-= autoProcessMedia.cfg =-
+
+ffmpeg_path									: ffmpeg_path = "/usr/local/bin"
+[NzbDrone] -> [[tv]]						: enabled = 0
+											: apikey = "<nzbdrone API key"
+-------------------------------------------   --------
+											: Save Changes

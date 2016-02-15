@@ -54,14 +54,14 @@ Name										: SABnzbd
 Host										: localhost
 Port 										: 8080
 API key 									: <sabnzbd api key>
-Category									: tv-sonarr
+Category									: tv
 -------------------------------------------   --------
 Click										: Test
 -------------------------------------------   --------
 Click										: Save
 
 ## SABnzbd - Disable						: Check before download (settings -> Switches -> Queue)
-## SABnzbd - Category						: tv-sonarr, Default, Default, nzbToNzbDrone
+## SABnzbd - Category						: tv, Default, Default, nzbToNzbDrone
 
 
 -= General - Startup =-
