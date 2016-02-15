@@ -56,6 +56,10 @@ main() {
     if ! cmd_exists 'ffmpeg'; then
       brew uninstall ffmpeg
     fi
+    
+    if ! cmd_exists '7z'; then
+      brew uninstall p7zip
+    fi
 
     brew install ffmpeg --with-fdk-aac --with-libfdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x264 --with-x265
 
