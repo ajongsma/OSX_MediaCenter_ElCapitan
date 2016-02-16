@@ -70,13 +70,12 @@ else
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
 if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $file, $match) == 0) {
-    $result = get_show_name(rid_extension($file));
-    doLog("Show name: " . $result);
-    $seasonarray = get_season_number($result);
+    doLog("Show name: " . $title);
+    $seasonarray = get_season_number($title);
     doLog("Possible season number: " . $seasonarray['res']);
-    $episodearray = get_episode_number($result);
+    $episodearray = get_episode_number($title);
     doLog("Episode number: " . $episodearray['res']);
-    $cleanshowname = $result;
+    $cleanshowname = $title;
     if ($seasonarray) {
             $cleanshowname = trim(str_replace($seasonarray['del'],'',$cleanshowname));
     }
