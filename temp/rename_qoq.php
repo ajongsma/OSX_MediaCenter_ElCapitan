@@ -83,7 +83,7 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("Clean Show Name: " . $cleanshowname);
     
     $cleanshowname = REPLACE($cleanshowname, '(2015)', '')
-    doLog("Clean Show Name 2 : " . $cleanshowname);
+    doLog("Clean Show Name: " . $cleanshowname);
     
     $tvdb_series_info = get_tvdb_seriesinfo($cleanshowname);
     if ($tvdb_series_info === false) {
