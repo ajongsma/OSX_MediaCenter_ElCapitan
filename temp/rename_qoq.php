@@ -71,30 +71,30 @@ else
 
 if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $file, $match) == 0) {
     $result = get_show_name(rid_extension($file));
-    $output .= "Show name: " . $result . "\n";
+    doLog("Show name: " . $result);
     $seasonarray = get_season_number($result);
-    $output .= "Possible season number: " . $seasonarray['res'] . "\n";
+    doLog("Possible season number: " . $seasonarray['res']);
     $episodearray = get_episode_number($result);
-    $output .= "Episode number: " . $episodearray['res'] . "\n";
+    doLog("Episode number: " . $episodearray['res']);
     $cleanshowname = $result;
     if ($seasonarray) {
             $cleanshowname = trim(str_replace($seasonarray['del'],'',$cleanshowname));
     }
     $cleanshowname = trim(str_replace($episodearray['del'],'',$cleanshowname));
-    $output .= "Clean Show Name: " . $cleanshowname . "\n";
+    doLog("Clean Show Name: " . $cleanshowname);
     $tvdb_series_info = get_tvdb_seriesinfo($cleanshowname);
     if ($tvdb_series_info === false) {
             return array('status' => '1', 'output' => $output);
     }
-    $output .= "TheTVDB Series Name: " . $tvdb_series_info['name'] . "\n";
+    doLog("TheTVDB Series Name: " . $tvdb_series_info['name']);
     $seriesName = $tvdb_series_info['name'];
-    $output .= "TheTVDB Series ID: " . $tvdb_series_info['id'] . "\n";
+    doLog("TheTVDB Series ID: " . $tvdb_series_info['id']);
     $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
     if ($tvdb_episode_info === false) {
             return array('status' => '2', 'output' => $output);
     }
-    $output .= "TheTVDB Series Season: " . $tvdb_episode_info['season'] . "\n";
-    $output .= "TheTVDB Series Episode: " . $tvdb_episode_info['episode'] . "\n";
+    doLog("TheTVDB Series Season: " . $tvdb_episode_info['season']);
+    doLog("TheTVDB Series Episode: " . $tvdb_episode_info['episode']);
     $new_filename = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
 } else {
     //return array('status' => '3', 'output' => $output);
