@@ -59,7 +59,7 @@ else
     $timestamp = time() - $age;
     
     // This query will return all x264 movies (category 0 is "images", subcatz z0 is "movies" and subcata a09 is "x264"):
-    $query = "SELECT * FROM spots WHERE category=0 AND subcatz='z0|' AND subcata='a9|' AND stamp>" . $timestamp . " ORDER BY stamp";
+    $query = "SELECT * FROM spots WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|' AND stamp>" . $timestamp . " ORDER BY stamp";
     $result = mysqli_query($con,$query);
     
     // Process all results:
@@ -77,77 +77,14 @@ else
             $title_from_spot = str_replace(".", " ", $title_from_spot);
             doLog("Using as title \"".$title_from_spot."\", year: ".$year);
             
-            // Search movie info from IMDB:
-            $movieArray = $imdb->getMovieInfo($title_from_spot . " (" . $year . ")", False);
-            if (isset($movieArray['title_id']) and !empty($movieArray['title_id'])) 
-            { 
-                // Succesfully found
-                $imdb_year = trim($movieArray['year']);
-                $imdb_title = $movieArray['title'];
-                $imdb_url = $movieArray['imdb_url'];
-                
-                // Calculate the similarity between the movietitle from the spot and the movietitle found in IMDB:
-                $percent = compareTitles(strtolower($title_from_spot), strtolower($imdb_title));
-                doLog("Found: ".$imdb_title." (".$imdb_year."), ".round($percent, 2)."% match");
-                
-                // Assume the correct movie is found in IMDB when the similarity is higher then defined and the year from IMDB is the same as from the spot:
-                if (($imdb_year == $year) and ($percent >= $min_similar_text))
-                {
-                    $imdb_rating = $movieArray['rating'];
-                    
-                    if (!empty($imdb_rating))
-                    {
-                        // Rating found
-                        if ((preg_match('/(.+)( \[\d\.\d\])/', $title, $matches)) == 1)
-                            // If the rating had already been added to the title, strip it
-                            $title = $matches[1];
-                            
-                        // Add the rating to the spot title:
-                        $newtitle = str_replace(".", "&period;", $title)." [".$imdb_rating."]";
-                        $updateresult = mysqli_query($con, "UPDATE spots SET title = '".$newtitle."' WHERE id = ".$row['id']);
-                        $spotrating = 0;
-                        
-                        // Calculate the spotrating based on imdb rating (only valid spotrating when imdb rating is at least 6.0):
-                        if ($imdb_rating >= 6.0) {$spotrating = 1;}
-                        if ($imdb_rating >= 6.2) {$spotrating = 2;}
-                        if ($imdb_rating >= 6.4) {$spotrating = 3;}
-                        if ($imdb_rating >= 6.6) {$spotrating = 4;}
-                        if ($imdb_rating >= 6.8) {$spotrating = 5;}
-                        if ($imdb_rating >= 7.0) {$spotrating = 6;}
-                        if ($imdb_rating >= 7.2) {$spotrating = 7;}
-                        if ($imdb_rating >= 7.4) {$spotrating = 9;}
-                        if ($imdb_rating >= 7.6) {$spotrating = 10;}
-                        
-                        setSpotRating($con, $spotrating, $row['id']);
-                        doLog("Rating of ".$imdb_rating." found. Spotrating ".$spotrating." set.");
-                        $rated++;
-                    }
-                    else
-                    {
-                        // Clear spotrating if no rating found in IMDB
-                        setSpotRating($con, 0, $row['id']);
-                        doLog("No rating found found");
-                    }
-                }
-                else
-                {
-                    // Clear spotrating if the correct movie is not found in IMDB
-                    setSpotRating($con, 0, $row['id']);
-                    doLog("No matching movie found");
-                }
-            }
-            else
-            {
-                // Clear spotrating if no movie is found in IMDB
-                setSpotRating($con, 0, $row['id']);
-                doLog("No movie found");
-            }
+            // setSpotRating($con, 0, $row['id']);
+            // doLog("No matching movie found");
         }
         else
         {
             // Clear spotrating if the movie title could not be extracted from the spot title
-            setSpotRating($con, 0, $row['id']);
-            doLog("No title found");
+            //setSpotRating($con, 0, $row['id']);
+            //doLog("No title found");
         }
     }
 
