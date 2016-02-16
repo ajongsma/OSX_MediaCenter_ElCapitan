@@ -79,6 +79,8 @@ else
             
             // setSpotRating($con, 0, $row['id']);
             // doLog("No matching movie found");
+            
+            $rated++;
         }
         else
         {
@@ -91,7 +93,7 @@ else
     // Close MySQL connection:
     mysqli_close($con);
     
-    doLog($found." movies processed, of wich ".$rated." rated");
+    doLog($found." spots processed, of wich ".$rated." rated");
 }
 
 
