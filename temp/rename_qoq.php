@@ -69,6 +69,18 @@ else
         $title = str_replace("&period;", ".", $row['title']);
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
+        // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
+        if ((preg_match('/(.+)[ \(\.]((19|20)\d{2})/', $title, $matches)) == 1)
+        {
+            $title_from_spot = trim($matches[1]);
+            $year = trim($matches[2]);
+            $title_from_spot = str_replace(".", " ", $title_from_spot);
+            doLog("Using as title \"".$title_from_spot."\", year: ".$year);
+            
+            // setSpotTitle($con, $title_from_spot, $row['id']);
+            // doLog("No matching movie found");
+
+
 if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("Show name: " . $title);
     $seasonarray = get_season_number($title);
@@ -87,7 +99,7 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("Clean Show Name 2: " . $cleanshowname2);
     
     //$tvdb_series_info = get_tvdb_seriesinfo($cleanshowname);
-    $tvdb_series_info = get_tvdb_seriesinfo('CHICAGO MED');
+    $tvdb_series_info = get_tvdb_seriesinfo($title);
     if ($tvdb_series_info === false) {
             doLog("--> TVDB Status: False");
     }
@@ -108,16 +120,9 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
 doLog(array('status' => '4', 'output' => $output, 'filename' => $new_filename));
 doLog(array('output' => $output, 'filename' => $new_filename));
 
-        // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
-        if ((preg_match('/(.+)[ \(\.]((19|20)\d{2})/', $title, $matches)) == 1)
-        {
-            $title_from_spot = trim($matches[1]);
-            $year = trim($matches[2]);
-            $title_from_spot = str_replace(".", " ", $title_from_spot);
-            doLog("Using as title \"".$title_from_spot."\", year: ".$year);
-            
-            // setSpotTitle($con, $title_from_spot, $row['id']);
-            // doLog("No matching movie found");
+
+
+
             
             $rated++;
         }
