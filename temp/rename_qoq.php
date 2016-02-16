@@ -99,7 +99,7 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("Clean Show Name 2: " . $cleanshowname2);
     
     //$tvdb_series_info = get_tvdb_seriesinfo($cleanshowname);
-    $tvdb_series_info = get_tvdb_seriesinfo($title);
+    $tvdb_series_info = get_tvdb_seriesinfo('$title');
     if ($tvdb_series_info === false) {
             doLog("--> TVDB Status: False");
     }
