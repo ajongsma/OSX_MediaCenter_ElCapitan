@@ -97,10 +97,10 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title, $match) == 0) {
     $new_filename = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
 } else {
     //return array('status' => '3', 'output' => $output);
-    doLog(array('status' => '3', 'output' => $output));
+    doLog(array('status' => '3'));
 }
 doLog(array('status' => '4', 'output' => $output, 'filename' => $new_filename));
-
+doLog(array('output' => $output, 'filename' => $new_filename));
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         if ((preg_match('/(.+)[ \(\.]((19|20)\d{2})/', $title, $matches)) == 1)
