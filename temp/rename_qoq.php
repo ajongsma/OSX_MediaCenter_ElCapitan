@@ -70,9 +70,8 @@ else
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
 $seasonarray = get_season_number($title);
-doLog("Using as Season Number : ".$seasonarray);
 doLog("Possible season number: " . $seasonarray['res']);
-$episodearray = get_episode_number($result);
+$episodearray = get_episode_number($title);
 doLog("Possible episode number: " . $episodearray['res']);
 
 
