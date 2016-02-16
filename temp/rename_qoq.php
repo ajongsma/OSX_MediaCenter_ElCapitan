@@ -71,6 +71,10 @@ else
 
 $seasonarray = get_season_number($title);
 doLog("Using as Season Number : ".$seasonarray);
+doLog("Possible season number: " . $seasonarray['res']);
+$episodearray = get_episode_number($result);
+doLog("Possible episode number: " . $episodearray['res']);
+
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         if ((preg_match('/(.+)[ \(\.]((19|20)\d{2})/', $title, $matches)) == 1)
