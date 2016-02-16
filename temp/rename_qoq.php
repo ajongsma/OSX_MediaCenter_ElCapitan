@@ -69,17 +69,38 @@ else
         $title = str_replace("&period;", ".", $row['title']);
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
-$seasonarray = get_season_number($title);
-doLog("Possible season number: " . $seasonarray['res']);
-$episodearray = get_episode_number($title);
-doLog("Possible episode number: " . $episodearray['res']);
-
-$cleanshowname = $title;
-if ($seasonarray) {
-        $cleanshowname = trim(str_replace($seasonarray['del'],'',$cleanshowname));
+if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $file, $match) == 0) {
+    $result = get_show_name(rid_extension($file));
+    $output .= "Show name: " . $result . "\n";
+    $seasonarray = get_season_number($result);
+    $output .= "Possible season number: " . $seasonarray['res'] . "\n";
+    $episodearray = get_episode_number($result);
+    $output .= "Episode number: " . $episodearray['res'] . "\n";
+    $cleanshowname = $result;
+    if ($seasonarray) {
+            $cleanshowname = trim(str_replace($seasonarray['del'],'',$cleanshowname));
+    }
+    $cleanshowname = trim(str_replace($episodearray['del'],'',$cleanshowname));
+    $output .= "Clean Show Name: " . $cleanshowname . "\n";
+    $tvdb_series_info = get_tvdb_seriesinfo($cleanshowname);
+    if ($tvdb_series_info === false) {
+            return array('status' => '1', 'output' => $output);
+    }
+    $output .= "TheTVDB Series Name: " . $tvdb_series_info['name'] . "\n";
+    $seriesName = $tvdb_series_info['name'];
+    $output .= "TheTVDB Series ID: " . $tvdb_series_info['id'] . "\n";
+    $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
+    if ($tvdb_episode_info === false) {
+            return array('status' => '2', 'output' => $output);
+    }
+    $output .= "TheTVDB Series Season: " . $tvdb_episode_info['season'] . "\n";
+    $output .= "TheTVDB Series Episode: " . $tvdb_episode_info['episode'] . "\n";
+    $new_filename = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
+} else {
+    //return array('status' => '3', 'output' => $output);
+    doLog(array('status' => '3', 'output' => $output));
 }
-$cleanshowname = trim(str_replace($episodearray['del'],'',$cleanshowname));
-doLog("Clean Show Name: " . $cleanshowname);
+doLog(array('status' => '4', 'output' => $output, 'filename' => $new_filename));
 
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
