@@ -69,7 +69,7 @@ else
         $title = str_replace("&period;", ".", $row['title']);
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
-$seasonarray = get_season_number($result);
+$seasonarray = get_season_number($title);
 doLog("Using as Season Number : ".$seasonarray);
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
