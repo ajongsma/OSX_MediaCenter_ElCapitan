@@ -113,6 +113,9 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("TheTVDB Series Season: " . $tvdb_episode_info['season']);
     doLog("TheTVDB Series Episode: " . $tvdb_episode_info['episode']);
     $new_filename = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
+    
+    doLog("New File Name : " . $new_filename);
+    
 } else {
     //return array('status' => '3', 'output' => $output);
     doLog(array('status' => '3'));
