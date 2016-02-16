@@ -77,7 +77,7 @@ else
             $title_from_spot = str_replace(".", " ", $title_from_spot);
             doLog("Using as title \"".$title_from_spot."\", year: ".$year);
             
-            // setSpotRating($con, 0, $row['id']);
+            // setSpotTitle($con, $title_from_spot, $row['id']);
             // doLog("No matching movie found");
             
             $rated++;
@@ -134,9 +134,10 @@ function compareTitles($string1, $string2)
 
     return $percentage;
 
-function setSpotRating($con, $rating, $id)
+function setSpotTitle($con, $title, $id)
 {
-    $updateresult = mysqli_query($con, "UPDATE spots SET spotrating = '".$rating."' WHERE id = ".$id);
+    //$updateresult = mysqli_query($con, "UPDATE spots SET spotrating = '".$rating."' WHERE id = ".$id);
+    //$updateresult = mysqli_query($con, "UPDATE spots SET title= '".$title."' WHERE id = ".$id);
 }
 
 
