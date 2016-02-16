@@ -75,7 +75,7 @@ else
             $title_from_spot = trim($matches[1]);
             $year = trim($matches[2]);
             $title_from_spot = str_replace(".", " ", $title_from_spot);
-            doLog("Using as title \"".$title_from_spot."\", year: ".$year.", Title from spot: ".$title_from_spot);
+            doLog("Using as title \"".$title_from_spot."\", year: ".$year);
             
             // setSpotRating($con, 0, $row['id']);
             // doLog("No matching movie found");
