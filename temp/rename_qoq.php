@@ -69,7 +69,7 @@ else
         $title = str_replace("&period;", ".", $row['title']);
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
-if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title, $match) == 0) {
+if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title) {
     doLog("Show name: " . $title);
     $seasonarray = get_season_number($title);
     doLog("Possible season number: " . $seasonarray['res']);
