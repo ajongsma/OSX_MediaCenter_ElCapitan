@@ -90,7 +90,7 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("TheTVDB Series ID: " . $tvdb_series_info['id']);
     $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
     if ($tvdb_episode_info === false) {
-            return array('status' => '2', 'output' => $output);
+            doLog("--> TVDB Episode Status: False");
     }
     doLog("TheTVDB Series Season: " . $tvdb_episode_info['season']);
     doLog("TheTVDB Series Episode: " . $tvdb_episode_info['episode']);
