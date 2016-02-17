@@ -68,7 +68,7 @@ else
     {
         $found++;
         $title = str_replace("&period;", ".", $row['title']);
-        doLog("Spot: ".$title.", Row: ".$row['messageid']);
+        doLog("Spot \t: ".$title.", Row: ".$row['messageid']);
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         //$pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
@@ -104,15 +104,15 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     if ($tvdb_series_info === false) {
             doLog("--> TVDB Status \t: False");
     }
-    doLog("TheTVDB Series Name: " . $tvdb_series_info['name']);
+    doLog("TheTVDB Name: " . $tvdb_series_info['name']);
     $seriesName = $tvdb_series_info['name'];
-    doLog("TheTVDB Series ID \t: " . $tvdb_series_info['id']);
+    doLog("TheTVDB ID \t: " . $tvdb_series_info['id']);
     $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
     if ($tvdb_episode_info === false) {
             doLog("--> TVDB Episode Status \t: False");
     }
-    doLog("TheTVDB Series Season \t: " . $tvdb_episode_info['season']);
-    doLog("TheTVDB Series Episode \t: " . $tvdb_episode_info['episode']);
+    doLog("TheTVDB Season \t: " . $tvdb_episode_info['season']);
+    doLog("TheTVDB Episode \t: " . $tvdb_episode_info['episode']);
     $new_title_for_spot = gen_proper_filename($title, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
     
     doLog("New File Name \t: " . $new_title_for_spot);
