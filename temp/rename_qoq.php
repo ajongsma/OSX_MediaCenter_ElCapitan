@@ -208,7 +208,7 @@ function setSpotTitle($con, $title, $id)
 //    $new_filename = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
                 
 function gen_proper_filename($input, $name, $episode, $season) {
-        $delimiter = '.';
+        $delimiter = ' ';
         $extension = get_extension($input);
         if ($episode > 99) {
                 $string = 'S' . str_pad($season, 2, "0", STR_PAD_LEFT) . 'E' . str_pad($episode, 3, "0", STR_PAD_LEFT);
