@@ -74,7 +74,9 @@ else
         //$pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
         $pattern = '/(.+)[ \(\.]((19|20)\d{2})/(S|s)([0-9]+)(E|e)([0-9]+)/';
         preg_match($pattern, $title, $matches);
+        doLog("-------------------");
         print_r($matches);
+        doLog("-------------------");
         if ((preg_match($pattern, $title, $matches)) == 1)
         {
             $title_from_spot = trim($matches[1]);
