@@ -68,7 +68,7 @@ else
     {
         $found++;
         $title = str_replace("&period;", ".", $row['title']);
-        doLog("Spot \t: ".$title.", Row: ".$row['messageid']);
+        doLog("Spot \t\t: ".$title.", Row: ".$row['messageid']);
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         //$pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
@@ -80,7 +80,7 @@ else
             $title_from_spot = trim($matches[1]);
             $year = trim($matches[2]);
             $title_from_spot = str_replace(".", " ", $title_from_spot);
-            doLog("Using as title \t:".$title_from_spot."\", year: ".$year);
+            doLog("Using as title \t: ".$title_from_spot."\", year: ".$year);
             
             // setSpotTitle($con, $title_from_spot, $row['id']);
             // doLog("No matching movie found");
@@ -104,9 +104,9 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     if ($tvdb_series_info === false) {
             doLog("--> TVDB Status \t: False");
     }
-    doLog("TheTVDB Name: " . $tvdb_series_info['name']);
+    doLog("TheTVDB Name \t: " . $tvdb_series_info['name']);
     $seriesName = $tvdb_series_info['name'];
-    doLog("TheTVDB ID \t: " . $tvdb_series_info['id']);
+    doLog("TheTVDB ID \t\t: " . $tvdb_series_info['id']);
     $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
     if ($tvdb_episode_info === false) {
             doLog("--> TVDB Episode Status \t: False");
