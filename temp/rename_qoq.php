@@ -114,7 +114,10 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     }
     doLog("TheTVDB Season \t: " . $tvdb_episode_info['season']);
     doLog("TheTVDB Episode \t: " . $tvdb_episode_info['episode']);
-    $new_title_for_spot = gen_proper_filename($title, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
+    $new_title_for_spot = gen_proper_filename($title_from_spot, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
+    
+    doLog( gen_proper_filename($title_from_spot, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']) );
+    doLog( gen_proper_filename($title_from_spot, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']) );
     
     doLog("New File Name \t: " . $new_title_for_spot);
     
