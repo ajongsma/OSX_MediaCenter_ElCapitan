@@ -115,7 +115,7 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("TheTVDB Series Episode: " . $tvdb_episode_info['episode']);
     $new_title_for_spot = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
     
-    doLog("New File Name : " . $new_filename);
+    doLog("New File Name : " . $new_title_for_spot);
     
 } else {
     //return array('status' => '3', 'output' => $output);
@@ -153,6 +153,7 @@ function doLog($message)
 {
     global $quiet;
     global $timestamp;
+    global $message;
     
     if(!$quiet)
     {
