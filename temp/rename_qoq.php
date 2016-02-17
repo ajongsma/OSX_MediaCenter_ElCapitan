@@ -72,10 +72,8 @@ else
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         //$pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
         $pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
-        preg_match($pattern, $title, $matches);
-        doLog("-------------------");
-        print_r($matches);
-        doLog("-------------------");
+        //preg_match($pattern, $title, $matches);
+        //print_r($matches);
         if ((preg_match($pattern, $title, $matches)) == 1)
         {
             $title_from_spot = trim($matches[1]);
@@ -94,18 +92,14 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     $episodearray = get_episode_number($title);
     doLog("Episode number: " . $episodearray['res']);
     $cleanshowname = $title_from_spot;
-    if ($seasonarray) {
-            $cleanshowname = trim(str_replace($seasonarray['del'],'',$cleanshowname));
-    }
-    $cleanshowname = trim(str_replace($episodearray['del'],'',$cleanshowname));
-    doLog("Clean Show Name: " . $cleanshowname);
-    
-    //$cleanshowname2 = str_replace($cleanshowname, '(2015)', '')
-    $cleanshowname2 = trim(str_replace('(2015)','',$cleanshowname));
-    doLog("Clean Show Name 2: " . $cleanshowname2);
+    //if ($seasonarray) {
+    //        $cleanshowname = trim(str_replace($seasonarray['del'],'',$cleanshowname));
+    //}
+    //$cleanshowname = trim(str_replace($episodearray['del'],'',$cleanshowname));
+    //doLog("Clean Show Name: " . $cleanshowname);
     
     //$tvdb_series_info = get_tvdb_seriesinfo($cleanshowname);
-    $tvdb_series_info = get_tvdb_seriesinfo('\'' . $title . '\'');
+    $tvdb_series_info = get_tvdb_seriesinfo('\'' . $cleanshowname . '\'');
     if ($tvdb_series_info === false) {
             doLog("--> TVDB Status: False");
     }
