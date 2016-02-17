@@ -30,8 +30,9 @@ $min_similar_text = 75;
 
 // set the default timezone to use. Available since PHP 5.1
 date_default_timezone_set('CET');
-$match = "";
 
+$match = '';
+$new_title_for_spot = '';
 
 // ====================================================================================================================
 // DO NOT EDIT BELOW
@@ -112,7 +113,7 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     }
     doLog("TheTVDB Series Season: " . $tvdb_episode_info['season']);
     doLog("TheTVDB Series Episode: " . $tvdb_episode_info['episode']);
-    $new_filename = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
+    $new_title_for_spot = gen_proper_filename($file, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
     
     doLog("New File Name : " . $new_filename);
     
