@@ -70,6 +70,11 @@ else
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
+        $subject = "abcdef";
+        $pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
+        preg_match($pattern, $title, $matches, PREG_OFFSET_CAPTURE, 3);
+        print_r($matches);
+
         if ((preg_match('/(.+)[ \(\.]((19|20)\d{2})/', $title, $matches)) == 1)
         {
             $title_from_spot = trim($matches[1]);
