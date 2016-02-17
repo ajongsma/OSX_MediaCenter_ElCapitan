@@ -33,7 +33,6 @@ date_default_timezone_set('CET');
 
 $match = '';
 $new_title_for_spot = '';
-$message = '';
 
 // ====================================================================================================================
 // DO NOT EDIT BELOW
@@ -150,11 +149,9 @@ doLog(array('output' => $output, 'filename' => $new_filename));
 // Functions
 // ====================================================================================================================
 
-function doLog($message)
-{
+function doLog($message) {
     global $quiet;
     global $timestamp;
-    global $message;
     
     if(!$quiet)
     {
