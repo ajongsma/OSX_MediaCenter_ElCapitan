@@ -127,8 +127,9 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     //return array('status' => '3', 'output' => $output);
     doLog(array('status' => '3'));
 }
-doLog(array('status' => '4', 'output' => $output, 'filename' => $new_filename));
-doLog(array('output' => $output, 'filename' => $new_filename));
+
+//doLog(array('status' => '4', 'output' => $output, 'filename' => $new_filename));
+//doLog(array('output' => $output, 'filename' => $new_filename));
 
 
 
