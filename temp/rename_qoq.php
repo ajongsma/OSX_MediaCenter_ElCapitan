@@ -70,9 +70,8 @@ else
         doLog("Spot: ".$title.", Row: ".$row['messageid']);
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
-        $subject = "abcdef";
         //$pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
-        $pattern = '/(.+)[ \(\.]((19|20)\d{2}+)(S|s)([0-9]+)(E|e)([0-9]+)/';
+        $pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
         preg_match($pattern, $title, $matches);
         doLog("-------------------");
         print_r($matches);
@@ -89,7 +88,7 @@ else
 
 
 if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
-    doLog("Show name: " . $title);
+    //doLog("Show name: " . $title);
     $seasonarray = get_season_number($title);
     doLog("Possible season number: " . $seasonarray['res']);
     $episodearray = get_episode_number($title);
