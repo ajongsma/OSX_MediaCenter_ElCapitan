@@ -71,9 +71,10 @@ else
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         $subject = "abcdef";
-        $pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
-        //preg_match($pattern, $title, $matches);
-        //print_r($matches);
+        //$pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
+        $pattern = '/(.+)[ \(\.]((19|20)\d{2})/(S|s)([0-9]+)(E|e)([0-9]+)/';
+        preg_match($pattern, $title, $matches);
+        print_r($matches);
         if ((preg_match($pattern, $title, $matches)) == 1)
         {
             $title_from_spot = trim($matches[1]);
