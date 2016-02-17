@@ -80,7 +80,7 @@ else
             $title_from_spot = trim($matches[1]);
             $year = trim($matches[2]);
             $title_from_spot = str_replace(".", " ", $title_from_spot);
-            doLog("Using as title \"".$title_from_spot."\", year: ".$year);
+            doLog("Using as title \t:".$title_from_spot."\", year: ".$year);
             
             // setSpotTitle($con, $title_from_spot, $row['id']);
             // doLog("No matching movie found");
@@ -102,20 +102,20 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     //$tvdb_series_info = get_tvdb_seriesinfo($cleanshowname);
     $tvdb_series_info = get_tvdb_seriesinfo('\'' . $cleanshowname . '\'');
     if ($tvdb_series_info === false) {
-            doLog("--> TVDB Status: False");
+            doLog("--> TVDB Status \t: False");
     }
     doLog("TheTVDB Series Name: " . $tvdb_series_info['name']);
     $seriesName = $tvdb_series_info['name'];
-    doLog("TheTVDB Series ID: " . $tvdb_series_info['id']);
+    doLog("TheTVDB Series ID \t: " . $tvdb_series_info['id']);
     $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
     if ($tvdb_episode_info === false) {
-            doLog("--> TVDB Episode Status: False");
+            doLog("--> TVDB Episode Status \t: False");
     }
-    doLog("TheTVDB Series Season: " . $tvdb_episode_info['season']);
-    doLog("TheTVDB Series Episode: " . $tvdb_episode_info['episode']);
+    doLog("TheTVDB Series Season \t: " . $tvdb_episode_info['season']);
+    doLog("TheTVDB Series Episode \t: " . $tvdb_episode_info['episode']);
     $new_title_for_spot = gen_proper_filename($title, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season']);
     
-    doLog("New File Name : " . $new_title_for_spot);
+    doLog("New File Name \t: " . $new_title_for_spot);
     
 } else {
     //return array('status' => '3', 'output' => $output);
