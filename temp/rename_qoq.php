@@ -123,7 +123,7 @@ if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     doLog("-----------------------");
     
     doLog("New File Name \t: " . $new_title_for_spot);
-    
+    doLog("=======================");
 } else {
     //return array('status' => '3', 'output' => $output);
     doLog(array('status' => '3'));
