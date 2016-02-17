@@ -72,7 +72,7 @@ else
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         $subject = "abcdef";
         $pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
-        preg_match($pattern, $title, $matches, PREG_OFFSET_CAPTURE, 3);
+        preg_match($pattern, $title, $matches);
         print_r($matches);
 
         if ((preg_match('/(.+)[ \(\.]((19|20)\d{2})/', $title, $matches)) == 1)
@@ -138,7 +138,7 @@ doLog(array('output' => $output, 'filename' => $new_filename));
         {
             // Clear spotrating if the movie title could not be extracted from the spot title
             //setSpotRating($con, 0, $row['id']);
-            //doLog("No title found");
+            doLog("No title found");
         }
     }
 
