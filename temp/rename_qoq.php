@@ -90,10 +90,10 @@ else
 if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
     //doLog("Show name: " . $title);
     $seasonarray = get_season_number($title);
-    doLog("Possible season number: " . $seasonarray['res']);
+    doLog("Season number: " . $seasonarray['res']);
     $episodearray = get_episode_number($title);
     doLog("Episode number: " . $episodearray['res']);
-    $cleanshowname = $title;
+    $cleanshowname = $title_from_spot;
     if ($seasonarray) {
             $cleanshowname = trim(str_replace($seasonarray['del'],'',$cleanshowname));
     }
