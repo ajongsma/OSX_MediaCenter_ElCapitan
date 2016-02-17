@@ -68,7 +68,7 @@ else
     {
         $found++;
         $title = str_replace("&period;", ".", $row['title']);
-        doLog("Spot \t\t\t: ".$title.", Row: ".$row['messageid']);
+        doLog("Spot \t\t\t: ".$title);
         doLog("Row \t\t\t: ".$row['messageid']);
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
