@@ -93,6 +93,7 @@ else
             //print_r('-----------------');
             if ((preg_match($pattern, $title, $matches)) == 1) {
                 $info_from_spot = trim($matches[6]);
+                $info_from_spot = str_replace('(WEB-DL)', 'WEB-DL', $info_from_spot);
                 $info_from_spot = str_replace('Q o Q', 'QoQ', $info_from_spot);
                 doLog("Spot quality info \t: " . $info_from_spot);
             } else {
@@ -131,11 +132,11 @@ else
                     
                     doLog("New File Name \t: " . $new_title_for_spot);
                     doLog("=======================");
-                }
 
-                setSpotTitle($con, $new_title_for_spot, $row['id']); 
+                    setSpotTitle($con, $new_title_for_spot, $row['id']); 
 
                 $rated++;
+                }
             } else {
                 doLog("No season or episode information found");
             }
