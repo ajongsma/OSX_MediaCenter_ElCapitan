@@ -105,25 +105,26 @@ else
                         doLog(" - TheTVDB Name \t: " . $tvdb_series_info['name']);
                         $seriesName = $tvdb_series_info['name'];
 
-                        // Calculate the similarity between the movietitle from the spot and the movietitle found in IMDB:
+                        // Calculate the similarity between the movietitle from the spot and the movietitle found in TVDB:
                         $percent = compareTitles(strtolower($title_from_spot), strtolower($seriesName));
                         doLog(" - TheTVDB ID \t: " . $tvdb_series_info['id'] . ", ".round($percent, 2)."% match");
                         if ($percent >= $min_similar_text) {
                             //doLog("- TheTVDB ID \t\t: " . $tvdb_series_info['id']);
                             $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
                             if ($tvdb_episode_info === false) {
-                                    doLog(" - TVDB Episode Status \t: False");
+                                doLog(" - TVDB Episode Status \t: False");
+                            } else {
+                                doLog(" - TheTVDB Season \t: " . $tvdb_episode_info['season']);
+                                doLog(" - TheTVDB Episode \t: " . $tvdb_episode_info['episode']);
+
+                                $new_title_for_spot = gen_proper_spotname($title_from_spot, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season'], $info_from_spot);
+                                doLog(" - New File Name \t: " . $new_title_for_spot);
+                                
+                                setSpotTitle($con, $new_title_for_spot, $row['id']); 
+
+                                $rated++;
                             }
-                            doLog(" - TheTVDB Season \t: " . $tvdb_episode_info['season']);
-                            doLog(" - TheTVDB Episode \t: " . $tvdb_episode_info['episode']);
-
-                            $new_title_for_spot = gen_proper_spotname($title_from_spot, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season'], $info_from_spot);
                             
-                            doLog(" - New File Name \t: " . $new_title_for_spot);
-                            
-                            setSpotTitle($con, $new_title_for_spot, $row['id']); 
-
-                            $rated++;
                         } else {
                             doLog(" - TVDB\t\t: Found TVDB show doesn't match name, skipping");
                         }
