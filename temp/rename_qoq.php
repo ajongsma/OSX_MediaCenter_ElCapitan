@@ -1,5 +1,5 @@
 <?php
-// Change Spot Title
+// Change Spotweb Spot Title
 //
 // This script will rename the spot title in case a year was detected.
 // The script assumes the title syntax is like: "TV Show title (year) release info"
