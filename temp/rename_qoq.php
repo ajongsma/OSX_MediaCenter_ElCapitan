@@ -44,10 +44,6 @@ $rated = 0;
 require($dbsettingsfile);
 $con = mysqli_connect($dbsettings['host'], $dbsettings['user'], $dbsettings['pass'], $dbsettings['dbname']);
 
-// Initiate the IMDB class:
-//require("./imdb.php");
-//$imdb = new Imdb();
-
 // Check connection:
 if (mysqli_connect_errno($con))
     doLog("Failed to connect to MySQL: " . mysqli_connect_error());
