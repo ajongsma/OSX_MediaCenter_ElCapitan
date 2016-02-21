@@ -1,0 +1,3 @@
+[submodule "osx_server_enhancements"]
+	path = osx_server_enhancements
+	url = https://github.com/ElusiveMind/osx_server_enhancements.git
