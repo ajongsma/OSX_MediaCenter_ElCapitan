@@ -15,6 +15,7 @@
 $dbsettingsfile = "/Users/Plex/Spotweb/dbsettings.inc.php";
 
 // Should we send some output? Ie for logging use: php addrating.php >> /var/log/spotweb
+$debug = false;
 $quiet = false;
 $timestamp = false; // Timestamp in logging
 
@@ -64,7 +65,7 @@ else
         $found++;
         $title = str_replace("&period;", ".", $row['title']);
         doLog("Spot \t\t\t: ".$title);
-        doLog(" - Row \t\t: ".$row['messageid']);
+        if($debug) {  doLog(" - Row \t\t: ".$row['messageid']); }
 
         // Regular expression to try to get a "clean" movietitle from the spot title (all text until "year"):
         //$pattern = '/(.+)[ \(\.]((19|20)\d{2})/';
@@ -76,8 +77,8 @@ else
             $title_from_spot = trim($matches[1]);
             $year = trim($matches[2]);
             $title_from_spot = str_replace(".", " ", $title_from_spot);
-            doLog(" - Spot Title \t: ".$title_from_spot);
-            doLog(" - Spot Year \t\t: ".$year);
+            if($debug) { doLog(" - Spot Title \t: ".$title_from_spot); }
+            if($debug) { doLog(" - Spot Year \t\t: ".$year); }
 
             // Regular expression to try to get extra info from the spot title (all text as of "year"):
             $pattern = '/((19|20)\d{2})[ \)\.] (S|s)(\d{2}+)(E|e)\d{2} (.+)/';
@@ -88,34 +89,36 @@ else
                 $info_from_spot = trim($matches[6]);
                 $info_from_spot = str_replace('(WEB-DL)', 'WEB-DL', $info_from_spot);
                 $info_from_spot = str_replace('Q o Q', 'QoQ', $info_from_spot);
-                doLog(" - Spot quality info \t: " . $info_from_spot);
+                if($debug) { doLog(" - Spot quality info \t: " . $info_from_spot); }
             
                 if (preg_match('/(S|s)([0-9]+)(E|e)([0-9]+)/', $title)) {
                     //doLog("Show name: " . $title);
                     $seasonarray = get_season_number($title);
-                    doLog(" - Season number \t: " . $seasonarray['res']);
+                    if($debug) {  doLog(" - Season number \t: " . $seasonarray['res']); }
                     $episodearray = get_episode_number($title);
-                    doLog(" - Episode number \t: " . $episodearray['res']);
+                    if($debug) { doLog(" - Episode number \t: " . $episodearray['res']); }
                     
                     $tvdb_series_info = get_tvdb_seriesinfo('\'' . $title_from_spot . '\'');
                     
                     if ($tvdb_series_info === false) {
-                            doLog("--> TVDB Status \t: False");
+                            doLog("- TVDB \t\t: Skipping, title not found");
                     } else {
-                        doLog(" - TheTVDB Name \t: " . $tvdb_series_info['name']);
+                        if($debug) { doLog(" - The TVDB Name \t: " . $tvdb_series_info['name']); }
                         $seriesName = $tvdb_series_info['name'];
 
                         // Calculate the similarity between the movietitle from the spot and the movietitle found in TVDB:
                         $percent = compareTitles(strtolower($title_from_spot), strtolower($seriesName));
-                        doLog(" - TheTVDB ID \t: " . $tvdb_series_info['id'] . ", ".round($percent, 2)."% match");
+                        if($debug) {  doLog(" - The TVDB ID \t: " . $tvdb_series_info['id'] . ", ".round($percent, 2)."% match"); }
+                        if($debug) {  doLog(" - TheTVDB ID \t: " . $tvdb_series_info['id'] . ", ".round($percent, 2)."% match"); }
                         if ($percent >= $min_similar_text) {
+                        	doLog("- TVDB  \t\t: Matched " . $tvdb_series_info['name'] . " with TVDB ID " . $tvdb_series_info['id'] . " for " . round($percent, 2) . "%");
                             //doLog("- TheTVDB ID \t\t: " . $tvdb_series_info['id']);
                             $tvdb_episode_info = get_tvdb_episodeinfo($tvdb_series_info['id'], $episodearray['res'], $seasonarray['res']);
                             if ($tvdb_episode_info === false) {
-                                doLog(" - TVDB Episode Status \t: False");
+                                doLog("- TVDB \t\t\t: Skipping, no episode information found");
                             } else {
-                                doLog(" - TheTVDB Season \t: " . $tvdb_episode_info['season']);
-                                doLog(" - TheTVDB Episode \t: " . $tvdb_episode_info['episode']);
+                                if($debug) { doLog(" - TheTVDB Season \t: " . $tvdb_episode_info['season']); }
+                                if($debug) { doLog(" - TheTVDB Episode \t: " . $tvdb_episode_info['episode']); }
 
                                 $new_title_for_spot = gen_proper_spotname($title_from_spot, $tvdb_series_info['name'], $tvdb_episode_info['episode'], $tvdb_episode_info['season'], $info_from_spot);
                                 doLog(" - New File Name \t: " . $new_title_for_spot);
@@ -126,17 +129,17 @@ else
                             }
                             
                         } else {
-                            doLog(" - TVDB\t\t: Found TVDB show doesn't match name, skipping");
+                            doLog(" - TVDB\t\t: Skipping, found TVDB show doesn't match");
                         }
                     }
                 } else {
-                    doLog(" - TVDB\t\t: No season or episode information found, skipping");
+                    doLog(" - TVDB\t\t: Skipping, no season or episode information found.");
                 }
             } else {
-                doLog(" - Spot info \t\t: No season or episode information found, skipping");
+                doLog("\t\t\t: Skipping, no season or episode information found");
             } 
         } else {
-            doLog(" - Year\t\t: No year in title found, skipping");
+            doLog("\t\t\t: Skipping, no year in title found");
         }
     }
 
