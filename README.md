@@ -177,6 +177,14 @@ Usefull links:
 - make
 - INSTALL_ROOT=/usr/local/php5530_ext make install
 
+###### gd
+- cd ~/Github/osx_server_enhancements/packages/php-5.5.30/ext/gd
+- phpize
+- sudo CFLAGS="-arch x86_64 -g -Os -pipe -no-cpp-precomp" CCFLAGS="-arch x86_64 -g -Os -pipe" CXXFLAGS="-arch x86_64 -g -Os -pipe" LDFLAGS="-arch x86_64 -bind_at_load" './configure' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-config-file-path=/etc/' '--with-config-file-scan-dir=/opt/local/var/db/php5' '--enable-bcmath' '--enable-ctype' '--enable-dom' '--enable-fileinfo' '--enable-filter' '--enable-hash' '--enable-json' '--enable-libxml' '--enable-pdo' '--enable-phar' '--enable-session' '--enable-simplexml' '--enable-tokenizer' '--enable-xml' '--enable-xmlreader' '--enable-xmlwriter' '--with-bz2=/opt/local' '--with-mhash=/opt/local' '--with-pcre-regex=/opt/local' '--with-readline=/opt/local' '--with-libxml-dir=/opt/local' '--with-zlib=/opt/local' '--disable-cgi' '--with-ldap=/usr' '--with-apxs2=/opt/local/apache2/bin/apxs' '--with-mysqli=/usr/local/mysql/bin/mysql_config' '--with-openssl' '--with-mcrypt=/opt/local/' '--with-mysql=/usr/local/mysql-5.1.42-osx10.6-x86_64/' '--with-iconv=/usr' '--with-curl=/opt/local' '--enable-mbstring' '--with-gd' '--with-jpeg-dir=/opt/local' '--with-png-dir=/opt/local' '--with-freetype-dir=/opt/local' '--enable-gd-native-ttf'  --with-ttf
+- make clean
+- make
+- INSTALL_ROOT=/usr/local/php5530_ext make install
+
 ####### /Library/Server/Web/Config/php/extensions.ini
 extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gd.so
 extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gettext.so
