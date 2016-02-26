@@ -168,5 +168,18 @@ Usefull links:
 
 ###### PHP Extentions
 - mkdir -p /usr/local/php5530_ext
+
+###### gettext
+- cd ~/Github/osx_server_enhancements/packages/php-5.5.30/ext/gettext
+- phpize
+- ./configure --with-gettext=/usr/local/opt/gettext
+- make clean
+- make
 - INSTALL_ROOT=/usr/local/php5530_ext make install
-- extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gd.so
+
+####### /Library/Server/Web/Config/php/extensions.ini
+extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gd.so
+extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gettext.so
+
+####### Check
+php -i
