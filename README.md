@@ -165,3 +165,8 @@ Usefull links:
 - http://www.michaelbagnall.com/blogs/php-gd-fixing-your-php-server-mac-os-x-without-homebrewmacports
 - https://github.com/ElusiveMind/osx_server_enhancements
 - https://github.com/philcook/brew-php-switcher
+
+###### PHP Extentions
+- mkdir -p /usr/local/php5530_ext
+- INSTALL_ROOT=/usr/local/php5530_ext make install
+- extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gd.so
