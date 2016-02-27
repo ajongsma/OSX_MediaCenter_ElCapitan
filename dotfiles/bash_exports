@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH="/usr/local/sbin:$PATH"
+
 # Make vim the default editor
 export EDITOR='vim'
 
