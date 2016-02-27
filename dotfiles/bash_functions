@@ -54,6 +54,13 @@ mcd() { mkdir -p "$1" && cd "$1"; }
 # my_ps: List processes owned by my user
 my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
 
+# list all folders in PATH environment variable more readable (non existent folders in red)
+function paths {
+  IFS=$':'
+  for i in $PATH; do if [ -d $(eval echo $i) ]; then echo $i; else echo -e "\033[0;31m$i\033[0m"; fi; done;
+  unset IFS
+}
+
 # psg: grep for a process
 psg() {
   FIRST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
