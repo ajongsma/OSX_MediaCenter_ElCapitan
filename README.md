@@ -108,16 +108,6 @@ Usefull links:
 - http://smashingfiasco.com/setting-up-aspnetmono-on-mac-os-server.html
 - http://serverfault.com/questions/441722/apache-2-2-on-mountain-lion-ignoring-proxypass-and-sending-request-to-documentro
 
-###### Dot files
-- https://github.com/alrra/dotfiles
-- https://github.com/nicolashery/mac-dev-setup
-- https://github.com/donnemartin/dev-setup
-- https://github.com/paulirish/dotfiles
-- https://github.com/mathiasbynens/dotfiles
-- https://github.com/cowboy/dotfiles
-- http://dotfiles.github.io
-- https://github.com/natelandau/awesome-osx
-
 ###### Github
 - sphp https://github.com/conradkleinespel/sphp-osx
 
@@ -148,17 +138,6 @@ Usefull links:
 - sudo sed -i 's/myisam-recover	/myisam-recover-options	/' /etc/mysql/my.cnf
 - sudo sed -i 's/key-buffer   /key-buffer-size /' /etc/mysql/my.cnf
 - sed -i '/bind-address/d' /etc/mysql/my.cnf
-
-###### Spotweb
-####### Remove NL Subs from QoQ Series:
-- UPDATE spots SET title= REPLACE (title, ' NLSubs ', ' ') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
-
-####### Remove (2015) from QoQ Series:
-- UPDATE spots SET title= REPLACE (title, '(2015)', '') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
-
-####### Remove (2016) from QoQ Series:
-- UPDATE spots SET title= REPLACE (title, '(2016)', '') WHERE spotterid = 'C7w1uw' AND subcatz = 'z1|'
-
 
 ###### Food for Thought
 - http://stackoverflow.com/questions/26493762/yosemite-el-capitan-php-gd-mcrypt-installation
