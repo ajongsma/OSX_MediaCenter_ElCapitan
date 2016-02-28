@@ -8,6 +8,7 @@ Advanced Settings							: Shown
 Rename Episodes								: Yes
 Standard Episode Format						: {Series Title} - S{season:00}E{episode:00} - {Quality Full} {MediaInfo Simple}-{Release Group}
 Daily Episode Format						: {Series Title} - {Air-Date} - {Quality Full} {MediaInfo Simple}-{Release Group}
+Season Folder Format						: {season:00}
 Multi-Episode Style							: Scene
 
 -= Media Management - Folders =-
