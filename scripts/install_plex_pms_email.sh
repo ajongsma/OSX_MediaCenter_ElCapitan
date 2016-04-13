@@ -28,7 +28,7 @@ main() {
     
     cd /Users/Plex
     git clone https://github.com/jakewaldron/PlexEmail.git
-    nano /Users/Plex/PlexEmail/scripts/config.conf
+    nano PlexEmail/scripts/config.conf
   
     # python plexEmail.py -t
   fi
