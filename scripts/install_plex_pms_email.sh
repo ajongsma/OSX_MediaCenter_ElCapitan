@@ -29,9 +29,11 @@ main() {
     cd /Users/Plex
     git clone https://github.com/jakewaldron/PlexEmail.git
     nano /Users/Plex/PlexEmail/scripts/config.conf
+  
+    # python plexEmail.py -t
   fi
 
-	print_result $? 'Plex E-mail'
+  print_result $? 'Plex E-mail'
 }
 
 main
