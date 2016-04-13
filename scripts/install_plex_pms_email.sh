@@ -24,7 +24,7 @@ main() {
 	if ! file_exists '/Users/Plex/PlexEmail/scripts/plexEmail.py'; then
     ask_for_sudo
     
-    sudo -H pip install request
+    sudo easy_install requests
     
     cd /Users/Plex
     git clone https://github.com/jakewaldron/PlexEmail.git
