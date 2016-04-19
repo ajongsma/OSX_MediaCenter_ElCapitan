@@ -52,6 +52,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+#   restart: Restart the Apple Remote Desktop service
+alias restart-ard='sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.screensharing.plist &&  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing.plist'
+
 #   memHogsTop, memHogsPs:  Find memory hogs
 #   -----------------------------------------------------
 alias memHogsTop='top -l 1 -o rsize | head -20'
