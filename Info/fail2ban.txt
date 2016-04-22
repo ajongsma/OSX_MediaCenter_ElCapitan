@@ -1,0 +1,138 @@
+## http://www.fail2ban.org/wiki/index.php/HOWTO_Mac_OS_X_Server_(10.5)
+
+brew install fail2ban
+sudo touch /var/log/fail2ban.log
+sudo touch /var/log/fail2ban-secure.log
+
+sudo nano /etc/pf.conf
+Add:
+table <fail2ban> persist  
+block drop log quick from <fail2ban> to any
+
+nano /usr/local/etc/fail2ban/jail.conf
+- Change under section [ssh-ipfw]:
+-----
+enabled  = true
+filter   = sshd
+action   = ipfw
+logpath  = /var/log/secure.log
+-----
+
+- Add below section [ssh-ipfw]
+-----
+[ssh-afctl]
+
+enabled  = true
+filter   = sshd
+action   = afctl
+logpath  = /var/log/secure.log
+
+
+[ftp-afctl]
+
+enabled  = true
+filter   = 10.5-ftp
+action   = afctl
+logpath  = /var/log/secure.log
+
+
+[pop3-afctl]
+
+enabled  = true
+filter   = 10.5-pop3
+action   = afctl
+logpath  = /var/log/system.log
+
+
+[pop3s-afctl]
+
+enabled  = true
+filter   = 10.5-pop3s
+action   = afctl
+logpath  = /var/log/system.log
+
+
+[imap-afctl]
+
+enabled  = true
+filter   = 10.5-imap
+action   = afctl
+logpath  = /var/log/system.log
+
+
+[imaps-afctl]
+
+enabled  = true
+filter   = 10.5-imaps
+action   = afctl
+logpath  = /var/log/system.log
+-----
+
+
+- Create file afctl.conf
+nano /usr/local/etc/fail2ban/action.d/afctl.conf
+-----
+# Fail2Ban configuration file for using afctl on Mac OS X Server 10.5
+[Definition]
+actionstart = 
+actionstop = 
+actioncheck = 
+actionban = /Applications/Server.app/Contents/ServerRoot/usr/libexec/afctl -a <ip> -t 5
+actionunban = /Applications/Server.app/Contents/ServerRoot/usr/libexec/afctl -r <ip>
+[Init]
+localhost = 127.0.0.1
+-----
+
+- Create file ftp.conf
+nano /usr/local/etc/fail2ban/filter.d/ftp.conf
+-----
+# Fail2Ban configuration file for FTP service on Mac OS X Server 10.5
+#[INCLUDES]
+before = common.conf
+[Definition]
+_daemon = ftpd
+failregex = ^%(__prefix_line)sFailed authentication from: .* \[<HOST>\]
+ignoreregex = 
+-----
+
+- Create file imap.conf
+nano /usr/local/etc/fail2ban/filter.d/imap.conf
+-----
+# Fail2Ban configuration file for IMAP service on Mac OS X Server 10.5
+[INCLUDES]
+before = common.conf
+[Definition]
+_daemon = imap
+failregex = ^%(__prefix_line)sbadlogin from: \[<HOST>\]
+ignoreregex = 
+-----
+
+- Create file pop3.conf
+nano /usr/local/etc/fail2ban/filter.d/pop3.conf
+-----
+# Fail2Ban configuration file for POP3 service on Mac OS X Server 10.5
+[INCLUDES]
+before = common.conf
+[Definition]
+_daemon = pop3
+failregex =  ^%(__prefix_line)sbadlogin: .* \[<HOST>\]
+             ^%(__prefix_line)sbadlogin: \[<HOST>\]
+ignoreregex = 
+-----
+
+- Create file pop3s.conf
+nano /usr/local/etc/fail2ban/filter.d/pop3s.conf
+-----
+# Fail2Ban configuration file for POP3S service on Mac OS X Server 10.5
+[INCLUDES]
+before = common.conf
+[Definition]
+_daemon = pop3s
+failregex = ^%(__prefix_line)sbadlogin: .* \[<HOST>\]
+            ^%(__prefix_line)sbadlogin: \[<HOST>\]
+ignoreregex = 
+-----
+
+
+sudo /usr/local/bin/fail2ban-client start
+#sudo /usr/local/bin/fail2ban-client stop
