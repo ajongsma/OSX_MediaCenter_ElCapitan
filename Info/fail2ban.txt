@@ -3,6 +3,7 @@
 brew install fail2ban
 sudo touch /var/log/fail2ban.log
 sudo touch /var/log/fail2ban-secure.log
+sudo touch /var/log/fail2ban-system.log
 
 sudo nano /etc/pf.conf
 Add:
@@ -87,7 +88,7 @@ localhost = 127.0.0.1
 nano /usr/local/etc/fail2ban/filter.d/10.5-ftp.conf
 -----
 # Fail2Ban configuration file for FTP service on Mac OS X Server 10.5
-#[INCLUDES]
+[INCLUDES]
 before = common.conf
 [Definition]
 _daemon = ftpd
