@@ -15,7 +15,7 @@ nano /usr/local/etc/fail2ban/jail.conf
 enabled  = true
 filter   = sshd
 action   = ipfw
-logpath  = /var/log/secure.log
+logpath  = /var/log/fail2ban-secure.log
 -----
 
 - Add below section [ssh-ipfw]
@@ -25,7 +25,7 @@ logpath  = /var/log/secure.log
 enabled  = true
 filter   = sshd
 action   = afctl
-logpath  = /var/log/secure.log
+logpath  = /var/log/fail2ban-secure.log
 
 
 [ftp-afctl]
@@ -33,7 +33,7 @@ logpath  = /var/log/secure.log
 enabled  = true
 filter   = 10.5-ftp
 action   = afctl
-logpath  = /var/log/secure.log
+logpath  = /var/log/fail2ban-secure.log
 
 
 [pop3-afctl]
@@ -41,7 +41,7 @@ logpath  = /var/log/secure.log
 enabled  = true
 filter   = 10.5-pop3
 action   = afctl
-logpath  = /var/log/system.log
+logpath  = /var/log/fail2ban-system.log
 
 
 [pop3s-afctl]
@@ -49,7 +49,7 @@ logpath  = /var/log/system.log
 enabled  = true
 filter   = 10.5-pop3s
 action   = afctl
-logpath  = /var/log/system.log
+logpath  = /var/log/fail2ban-system.log
 
 
 [imap-afctl]
@@ -57,7 +57,7 @@ logpath  = /var/log/system.log
 enabled  = true
 filter   = 10.5-imap
 action   = afctl
-logpath  = /var/log/system.log
+logpath  = /var/log/fail2ban-system.log
 
 
 [imaps-afctl]
@@ -65,7 +65,7 @@ logpath  = /var/log/system.log
 enabled  = true
 filter   = 10.5-imaps
 action   = afctl
-logpath  = /var/log/system.log
+logpath  = /var/log/fail2ban-system.log
 -----
 
 
