@@ -63,12 +63,12 @@ Install
   * [ ] WebApp Proxy
   * [x] Folder creation
   * [x] NzbToMedia (SickBeard)
-- [x] SickBeard
+- [-] SickBeard -> Replaced by Sonarr
   * [x] LaunchAgent
   * [ ] WebApp Proxy
   * [x] SABnzbd+ integration (text step-by-step, not (yet) automated)
   * [x] Spotweb integration (text step-by-step, not (yet) automated) :small_red_triangle:
-- [ ] Sonarr
+- [x] Sonarr
   * [ ] WebApp Proxy
 - [x] Spotweb :small_red_triangle:
   * [x] API enablement check
