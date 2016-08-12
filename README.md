@@ -29,13 +29,13 @@ Install
 ###### OS X Additions
 - [x] Cheetah
 - [ ] Dotfiles
-  * [ ] bash_aliases
-  * [ ] bash_autocomplete
-  * [ ] bash_exports
-  * [ ] bash_functions
-  * [ ] bash_options
-  * [ ] bash_profile
-  * [ ] bash_prompt
+  * [x] bash_aliases
+  * [x] bash_autocomplete
+  * [x] bash_exports
+  * [x] bash_functions
+  * [x] bash_options
+  * [x] bash_profile
+  * [x] bash_prompt
 - [x] HomeBrew
   * [x] ffmpeg
 - [x] MySQL
