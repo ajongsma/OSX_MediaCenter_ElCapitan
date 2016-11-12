@@ -144,6 +144,7 @@ Usefull links:
 - http://www.michaelbagnall.com/blogs/php-gd-fixing-your-php-server-mac-os-x-without-homebrewmacports
 - https://github.com/ElusiveMind/osx_server_enhancements
 - https://github.com/philcook/brew-php-switcher
+- https://www.reddit.com/r/PleX/wiki/tools
 
 ###### PHP Extentions
 - mkdir -p /usr/local/php5530_ext
