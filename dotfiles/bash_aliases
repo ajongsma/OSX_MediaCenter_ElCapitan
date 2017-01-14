@@ -47,6 +47,9 @@ alias DT='tee ~/Desktop/terminalOut.txt'                            # DT:       
 alias less='less -FSRXc'                                            # Preferred 'less' implementation
 alias updatedb="sudo /usr/libexec/locate.updatedb"
 
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; which brew > /dev/null && brew update && brew upgrade && brew cleanup; which npm > /dev/null && npm install npm -g && npm update -g; which gem > /dev/null && sudo gem update --system && sudo gem update && sudo gem cleanup; which nix-channel > /dev/null && nix-channel --update && nix-env -u --keep-going;'
+
 # Always enable colored `grep` output
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
