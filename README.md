@@ -171,3 +171,7 @@ extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-2012121
 
 ####### Check
 php -i
+
+
+####### Fix slow starting Terminal
+sudo rm /private/var/log/asl/*.asl
