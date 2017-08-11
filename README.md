@@ -172,6 +172,9 @@ extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-2012121
 ####### Check
 php -i
 
+####### Tweaks Safari
+enable Safari’s debug menu: defaults write com.apple.Safari IncludeInternalDebugMenu 1
+disable Safari autoplay video: Safari > Debug > Media Flags and select Disallow Inline Video 
 
 ####### Fix slow starting Terminal
 sudo rm /private/var/log/asl/*.asl
