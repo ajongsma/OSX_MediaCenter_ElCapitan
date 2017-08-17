@@ -169,8 +169,14 @@ Usefull links:
 extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gd.so
 extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gettext.so
 
-###### Install Metor
+###### Installing something new
 - curl https://install.meteor.com/ | sh
+- https://github.com/lokenx/plexrequests-meteor
+- https://github.com/Kuroyukihimeeee/PlexRedirect
+- https://github.com/ITRav4/PlexRedirect - with NetData
+- https://github.com/firehol/netdata
+-- https://github.com/firehol/netdata/issues/52
+
 
 ####### Check
 php -i
