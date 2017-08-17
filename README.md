@@ -169,6 +169,9 @@ Usefull links:
 extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gd.so
 extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-20121212/gettext.so
 
+###### Install Metor
+- curl https://install.meteor.com/ | sh
+
 ####### Check
 php -i
 
