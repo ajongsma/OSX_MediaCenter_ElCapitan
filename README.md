@@ -180,6 +180,7 @@ extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-2012121
 -- https://github.com/firehol/netdata/issues/52
 -- sudo dseditgroup -o create Netdata
 -- dscl . -read /Groups/Netdata
+-- dscl . search /Groups GroupMembership Netdata
 
 ####### Check
 php -i
