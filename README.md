@@ -172,10 +172,10 @@ extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-2012121
 ###### Installing something new
 - curl https://install.meteor.com/ | sh
 - https://github.com/lokenx/plexrequests-meteor
-- https://github.com/Kuroyukihimeeee/PlexRedirect
+- https://github.com/ITRav4/PlexRedirect
 
 ###### Installing something new - Netdata
-- https://github.com/ITRav4/PlexRedirect - with NetData
+- https://github.com/Kuroyukihimeeee/PlexRedirect
 - https://github.com/firehol/netdata
 - https://github.com/firehol/netdata/issues/52
 - $ ./netdata-installer.sh --install /opt
