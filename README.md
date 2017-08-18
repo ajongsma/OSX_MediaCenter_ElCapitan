@@ -177,13 +177,13 @@ extension=/usr/local/php5530_ext/usr/lib/php/extensions/no-debug-non-zts-2012121
 ###### Installing something new - Netdata
 - https://github.com/ITRav4/PlexRedirect - with NetData
 - https://github.com/firehol/netdata
--- https://github.com/firehol/netdata/issues/52
--- $ ./netdata-installer.sh --install /opt
--- $ sudo dseditgroup -o create Netdata
--- $ dscl . -read /Groups/Netdata
--- $ dscl . search /Groups GroupMembership Netdata
--- $ killall netdata
--- $ /opt/netdata/usr/sbin/netdata
+- https://github.com/firehol/netdata/issues/52
+- $ ./netdata-installer.sh --install /opt
+- $ sudo dseditgroup -o create Netdata
+- $ dscl . -read /Groups/Netdata
+- $ dscl . search /Groups GroupMembership Netdata
+- $ killall netdata
+- $ /opt/netdata/usr/sbin/netdata
 
 
 ####### Check
